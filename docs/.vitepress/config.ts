@@ -60,4 +60,5 @@ export default defineConfig({
     }
   },
   lastUpdated: true,
+  base: '/blog-docs/'
 })
