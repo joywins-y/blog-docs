@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import sidebar from './sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,15 +12,7 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: sidebar,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
@@ -30,7 +23,7 @@ export default defineConfig({
     // 设置页脚
     footer: {
       // message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present Evan You'
+      copyright: 'Copyright © 2023-present Joy'
     },
 
     // 编辑链接
@@ -46,7 +39,10 @@ export default defineConfig({
     docFooter: {
       prev: 'Pagina prior',
       next: 'Proxima pagina'
-    }
+    },
+
+    logo: '/logo.png',
+
   },
   locales: {
     root: {
@@ -60,5 +56,9 @@ export default defineConfig({
     }
   },
   lastUpdated: true,
-  base: '/blog-docs/'
+  base: '/blog-docs/',
+  head: [
+    // 增加一个自定义的 favicon
+    ['link', { rel: 'icon', href: '/logo.png', crossorigin: '' }]
+  ]
 })
