@@ -12,6 +12,12 @@ export default [
   },
   {
     text: "Regular",
-    items: [{ text: "格式化银行卡号", link: "/regular/format-bank-card-number" }],
+    items: [
+      { text: "格式化银行卡号", link: "/regular/format-bank-card-number" },
+    ],
+  },
+  {
+    text: "Network",
+    items: [{ text: "Cookie 的 domain 属性", link: "/network/cookie-domain" }],
   },
 ];
