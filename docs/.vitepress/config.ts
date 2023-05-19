@@ -52,13 +52,14 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en',
-      link: '/en'
+      link: '/en',
     }
   },
   lastUpdated: true,
   base: '/blog-docs/',
   head: [
     // 增加一个自定义的 favicon
-    ['link', { rel: 'icon', href: '/logo.png', crossorigin: '' }]
+    ['link', { rel: 'icon', href: '/logo.png', crossorigin: '' }],
+    ['link', { rel: 'ico', href: '/favicon.ico', crossorigin: '' }]
   ]
 })

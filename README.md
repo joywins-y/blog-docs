@@ -1,5 +1,6 @@
 # My Blog Docs
 
+[地址](https://joywins-y.github.io/blog-docs/)
 ## VitePress
 
 使用 [VitePress](https://vitepress.dev/)
