@@ -1,9 +1,9 @@
 # My Blog Docs
 
-[地址](https://joywins-y.github.io/blog-docs/){:target="_blank"}
+[地址](https://joywins-y.github.io/blog-docs/)
 ## VitePress
 
-使用 [VitePress](https://vitepress.dev/){:target="_blank"}
+使用 [VitePress](https://vitepress.dev/)
 
 VitePress 是一个`静态网站生成器`(SSG)，专为构建快速、以内容为中心的网站而设计。
 
