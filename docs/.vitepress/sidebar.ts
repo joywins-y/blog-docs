@@ -18,6 +18,16 @@ export default [
   },
   {
     text: "Network",
-    items: [{ text: "Cookie 的 domain 属性", link: "/network/cookie-domain" }],
+    items: [
+      { text: "Cookie 的 domain 属性", link: "/network/cookie-domain" },
+      { text: "ssh root@ip", link: "/network/ssh" },
+    ],
+  },
+  {
+    text: "JavaScript",
+    items: [
+      { text: "数组扁平化", link: "/javascript/array-flattening" },
+      { text: "数组", link: "/javascript/array" },
+    ],
   },
 ];

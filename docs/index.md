@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 现在开始
-      link: /markdown-examples
+      link: /introduce/index
     - theme: alt
       text: GitHub
-      link: /api-examples
+      link: https://github.com/joywins-y/blog-docs
 
 features:
   - title: Feature A
