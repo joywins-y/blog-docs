@@ -25,3 +25,16 @@ ORM框架：TypeORM
 首先搭建MySQL服务，创建数据库并获取数据库连接以及用户名密码​
 
 ## 项目配置文件
+
+
+
+```mermaid
+graph LR
+KaTex--> A(标记 Accents)
+A-->撇,估计,均值,向量等写于符号上下的标记
+KaTex--> 分隔符_Delimiters
+分隔符_Delimiters-->小中大括号,竖杠,绝对值等分隔符的反斜杠写法
+KaTex--> 公式组_Enviroments
+公式组_Enviroments-->B(.....)
+KaTex-->C(...)
+```

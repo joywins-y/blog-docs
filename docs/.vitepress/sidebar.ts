@@ -8,7 +8,10 @@ export default [
   },
   {
     text: "Markdown",
-    items: [{ text: "语法速查表", link: "/markdown/grammar-cheat-sheet" }],
+    items: [
+      { text: "语法速查表", link: "/markdown/grammar-cheat-sheet" },
+      { text: "Markdown 代码块编程语言清单", link: "/markdown/Markdown 代码块编程语言清单" },
+    ],
   },
   {
     text: "Regular",
