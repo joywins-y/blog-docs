@@ -12,7 +12,7 @@ export default [
       { text: "语法速查表", link: "/markdown/grammar-cheat-sheet" },
       {
         text: "Markdown 代码块编程语言清单",
-        link: "/markdown/Markdown 代码块编程语言清单",
+        link: "/markdown/markdown-code-lang",
       },
       { text: "常用网址", link: "/markdown/常用网址" },
     ],
