@@ -41,7 +41,7 @@ export default defineConfig({
       next: 'Proxima pagina'
     },
 
-    logo: '/logo.png',
+    logo: 'logo.png',
 
   },
   locales: {
@@ -59,7 +59,8 @@ export default defineConfig({
   base: '/blog-docs/',
   head: [
     // 增加一个自定义的 favicon
-    ['link', { rel: 'icon', href: '/logo.png', crossorigin: '' }],
+    ['link', { rel: 'icon', href: 'logo.png', crossorigin: '' }],
     ['link', { rel: 'ico', href: '/favicon.ico', crossorigin: '' }]
-  ]
+  ],
+  ignoreDeadLinks: true,
 })
