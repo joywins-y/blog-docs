@@ -31,6 +31,10 @@ export default [
     ],
   },
   {
+    text: "CSS",
+    items: [{ text: "纯 CSS 实现的三种通知栏滚动效果", link: "/css/scrolling-effect" }],
+  },
+  {
     text: "JavaScript",
     items: [
       { text: "数组扁平化", link: "/javascript/array-flattening" },
