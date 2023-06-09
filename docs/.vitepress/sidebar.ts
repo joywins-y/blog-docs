@@ -14,6 +14,7 @@ export default [
         text: "Markdown 代码块编程语言清单",
         link: "/markdown/markdown-code-lang",
       },
+      { text: "Markdown 语法效果预览", link: "/markdown/预览" },
       { text: "常用网址", link: "/markdown/常用网址" },
     ],
   },
