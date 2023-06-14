@@ -32,8 +32,17 @@ export default [
     ],
   },
   {
+    text: "HTML",
+    items: [{ text: "N 秒后自动跳转到指定的 url", link: "/html/定时跳转" }],
+  },
+  {
     text: "CSS",
-    items: [{ text: "纯 CSS 实现的三种通知栏滚动效果", link: "/css/scrolling-effect" }],
+    items: [
+      {
+        text: "纯 CSS 实现的三种通知栏滚动效果",
+        link: "/css/scrolling-effect",
+      },
+    ],
   },
   {
     text: "JavaScript",
