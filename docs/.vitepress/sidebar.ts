@@ -27,6 +27,7 @@ export default [
   {
     text: "Network",
     items: [
+      { text: "Cookie 的基本概念", link: "/network/cookie-basic-concept" },
       { text: "Cookie 的 domain 属性", link: "/network/cookie-domain" },
       { text: "ssh root@ip", link: "/network/ssh" },
     ],
