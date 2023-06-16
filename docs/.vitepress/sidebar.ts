@@ -53,6 +53,19 @@ export default [
     ],
   },
   {
+    text: "Git",
+    items: [
+      { text: "git cherry-pick 的使用", link: "/git/git cherry-pick 的使用" },
+      { text: "git 监测文件目录变动", link: "/git/git 监测文件目录变动" }
+    ],
+  },
+  // {
+  //   text: "",
+  //   items: [
+  //     { text: "", link: "" },
+  //   ],
+  // },
+  {
     text: "Others",
     items: [
       { text: "其他-未分类 1", link: "/others/index" },

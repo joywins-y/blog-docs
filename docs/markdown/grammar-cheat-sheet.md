@@ -32,3 +32,16 @@
 | 定义列表 (Definition List)  | `term : definition`                 |
 | 删除线 (Strikethrough)      | `~~The world is flat.~~`            |
 | 任务列表 (Task List)        | `- [x] Write the press release`     |
+
+
+### 其他语法
+
+#### markdown 空格缩进与首行缩进
+
+一个汉字占两个空格大小，所以使用四个空格就可以达到首行缩进两个汉字的效果
+
+1. 一个空格：`&ensp;` 或 `&#8194;`
+
+2. 两个空格：`&emsp;` 或 `&#8195;`
+
+3. 不换行空格：`&nbsp;`或`&#160;`
