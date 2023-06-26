@@ -1,4 +1,4 @@
-# 精心收集的 95 个超实用的 JavaScript 代码片段（ES6 +编写）
+# 精心收集的超实用的 JavaScript 代码片段（ES6+ 编写）
 
 ## Array 数组
 
@@ -362,6 +362,17 @@ const median = (arr) => {
 // median([0,10,-2,7]) -> 3.5
 ```
 
+### 计算数组平均值
+
+计算平均值的方式很多，计算的逻辑都是一样的， 但是实现方式各不相同，一行代码简单实现：
+
+JavaScript 代码:
+
+```jsx
+const average = (arr) => arr.reduce((a, b) => a + b) / arr.length;
+average([1, 9, 18, 36]); //16
+```
+
 ### Nth element of array (获取数组的第 N 个元素)
 
 使用 Array.slice() 获取数组的第 n 个元素。如果索引超出范围，则返回 [] 。省略第二个参数 n ，将得到数组的第一个元素。
@@ -546,7 +557,8 @@ const scrollToTop = (_) => {
 
 ### Date 日期
 
-Get days difference between dates (获取两个日期之间相差的天数)
+### Get days difference between dates (获取两个日期之间相差的天数)
+
 计算 Date 对象之间的差异(以天为单位)。
 
 JavaScript 代码:
@@ -555,6 +567,40 @@ JavaScript 代码:
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) =>
   (dateFinal - dateInitial) / (1000 * 3600 * 24);
 // getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
+// getDaysDiffBetweenDates(new Date("2019-12-13"), new Date("2017-12-22")) -> -721
+
+const daysBetween = (date1, date2) =>
+  Math.ceil(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24));
+
+daysBetween(new Date("2017-12-13"), new Date("2017-12-22")); // 9
+daysBetween(new Date("2019-12-13"), new Date("2017-12-22")); // 721
+```
+
+### Query whether a day is a working day (查询某天是否为工作日)
+
+我们自己写日历组件时经常会用到，判断某个日期是否为工作日；周一至周五为工作日:
+
+JavaScript 代码:
+
+```jsx
+const isWeekday = (date) => date.getDay() % 6 !== 0;
+
+isWeekday(new Date(2022, 03, 11));
+// true
+```
+
+### 两日期之间相差的天数
+
+日常开发中经常遇到需要显示剩余天数， 一般我们就需要计算两日期之间相差天数
+
+JavaScript 代码:
+
+```jsx
+const dayDiff = (date1, date2) =>
+  Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000);
+
+dayDiff(new Date("2021-10-21"), new Date("2022-02-12"));
+// Result: 114
 ```
 
 ### Function 函数
@@ -922,12 +968,21 @@ const palindrome = (str) => {
 // palindrome('taco cat') -> true
 ```
 
-Reverse a string (反转一个字符串)
+#### Reverse a string (反转一个字符串)
+
 使用数组解构和 Array.reverse() 来反转字符串中字符的顺序。使用 join('')合并字符串。JavaScript 代码:
 
 ```jsx
 const reverseString = (str) => [...str].reverse().join("");
 // reverseString('foobar') -> 'raboof'
+```
+
+or
+
+```js
+const reverse = (str) => str.split("").reverse().join("");
+reverse("this is reverse");
+// esrever si siht
 ```
 
 ### Sort characters in string (alphabetical) (按字母顺序排列字符串)
@@ -983,22 +1038,6 @@ const getType = (v) =>
     ? "null"
     : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -> "set"
-```
-
-### Hexcode to RGB (Hex 转 RGB)
-
-使用 Array.slice() , Array.map() 和 match() 将十六进制颜色代码(前缀为#)转换为 RGB 值的字符串。
-
-JavaScript 代码:
-
-```jsx
-const hexToRgb = (hex) =>
-  `rgb(${hex
-    .slice(1)
-    .match(/.{2}/g)
-    .map((x) => parseInt(x, 16))
-    .join()})`;
-// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
 ```
 
 ### Is array(是否为数组)
@@ -1142,16 +1181,57 @@ const randomInRange = (min, max) => Math.random() _ (max - min) + min;
 // randomInRange(2,10) -> 6.0211363285087005
 ```
 
-### RGB to hexadecimal(RGB 转 hex)
+### RGB to hexadecimal(RGB 转 Hex)
 
 使用按位左移运算符(<<)和 toString(16) 将给定的 RGB 参数转换为十六进制字符串，然后使用 padStart(6,'0') 得到一个 6 位的十六进制值。
 
 JavaScript 代码:
 
+1. 方法一
+
 ```jsx
 const rgbToHex = (r, g, b) =>
-  ((r << 16) + (g << 8) + b).toString(16).padStart(6, "0");
-// rgbToHex(255, 165, 1) -> 'ffa501'
+  "#" + ((r << 16) + (g << 8) + b).toString(16).padStart(6, "0");
+// rgbToHex(255, 165, 1) -> '#ffa501'
+```
+
+2. 方法二
+
+```jsx
+const rgbToHex = (r, g, b) =>
+  "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+rgbToHex(255, 255, 255);
+//  #ffffff
+```
+
+### Hexcode to RGB (Hex 转 RGB)
+
+使用 Array.slice() , Array.map() 和 match() 将十六进制颜色代码(前缀为#)转换为 RGB 值的字符串。
+
+JavaScript 代码:
+
+```jsx
+const hexToRgb = (hex) =>
+  `rgb(${hex
+    .slice(1)
+    .match(/.{2}/g)
+    .map((x) => parseInt(x, 16))
+    .join()})`;
+// hexToRgb('#27ae60') -> 'rgb(39,174,96)'
+```
+
+### 生成随机十六进制
+
+随机生成十六进制颜色值
+
+```js
+const randomHexColor = () =>
+  `#${Math.floor(Math.random() * 0xffffff)
+    .toString(16)
+    .padEnd(6, "0")}`;
+console.log(randomHexColor());
+// #a2ce5b
 ```
 
 ### Swap values of two variables (交换两个变量的值)
@@ -1171,10 +1251,12 @@ JavaScript 代码:
 
 JavaScript 代码:
 
+1. 方式一
+
 ```jsx
 const getUrlParameters = (url) =>
   url
-    .match(/([^?=&]+)(=([^&]\_))/g)
+    .match(/([^?=&]+)(=([^&]*))/g)
     .reduce(
       (a, v) => (
         (a[v.slice(0, v.indexOf("="))] = v.slice(v.indexOf("=") + 1)), a
@@ -1182,6 +1264,22 @@ const getUrlParameters = (url) =>
       {}
     );
 // getUrlParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
+```
+
+2. 方式二
+
+```js
+const getParameters = (URL) =>
+  JSON.parse(
+    `{"${decodeURI(
+      URL.split("?")[1]
+        .replace(/"/g, '\\"')
+        .replace(/&/g, '","')
+        .replace(/=/g, '":"')
+    )}"}`
+  );
+
+// getParameters("https://www.google.com.hk/search?q=js+md&newwindow=1"); ==> {q: 'js+md', newwindow: '1'}
 ```
 
 ### UUID generator (UUID 生成器)
@@ -1229,4 +1327,126 @@ JavaScript 代码:
 ```jsx
 const valueOrDefault = (value, d) => value || d;
 // valueOrDefault(NaN, 30) -> 30
+```
+
+### Check if object is empty (检查对象是否为空)
+
+检查对象是否为空，即当对象等于`{}`时，也能正确识别
+
+```js
+const isEmpty = (obj) =>
+  obj ? Reflect.ownKeys(obj).length === 0 && obj.constructor === Object : false;
+isEmpty({}); // true
+isEmpty({ a: "not empty" }); //false
+```
+
+### Check if the current tab is in the background (检查当前选项卡是否在后台)
+
+浏览器使用选项卡式浏览，任何网页都有可能在后台，此时对用户来说是没有在浏览器的，那么如何快速检测到你的网页对用户是隐藏还是可见呢
+
+JavaScript 代码:
+
+```jsx
+const isTabActive = () => !document.hidden;
+
+isTabActive(); // true|false
+```
+
+### Check if element is in focus (检测元素是否处于焦点)
+
+`activeElement` 属性返回文档中当前获得焦点的元素
+
+JavaScript 代码:
+
+```jsx
+const elementIsInFocus = (el) => el === document.activeElemet;
+elementIsInFocus(anyElement); // 元素处于焦点返回true，反之返回false
+```
+
+### Check device type (检查设备类型)
+
+使用 `navigator.userAgent` 判断是移动设备还是 PC 端
+
+JavaScript 代码:
+
+```jsx
+const judgeDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(
+    navigator.userAgent
+  )
+    ? "Mobile"
+    : "PC";
+
+judgeDeviceType(); // PC | Mobile
+```
+
+### 检查设备上的触摸支持
+
+检查文档是否支持 touchstart 事件
+
+JavaScript 代码:
+
+```jsx
+const touchSupported = () => ('ontouchstart' in window || DocumentTouch && doucument instanceof DocumentTouch)
+```
+
+### Copy text to clipboard (文字复制到剪贴板)
+
+`Clipboard API` 它的所有操作都是异步的，返回`Promise`对象，不会造成页面卡顿。而且，它可以将任意内容（比如图片）放入剪贴板
+
+JavaScript 代码:
+
+```jsx
+const copyText = async (text) => await navigator.clipboard.writeText(text);
+
+copyText("单行代码 前端世界");
+```
+
+### get selected text (获取选定的文本)
+
+使用内置的 getSelection 获取用户选择的文本:
+
+JavaScript 代码:
+
+```jsx
+const getSelectedText = () => window.getSelection().toString();
+
+getSelectedText();
+// 返回选中的内容
+```
+
+### Convert Fahrenheit/Celsius (转换华氏/摄氏)
+
+处理温度有时会晕头转向。这两个函数则能帮助大家将华氏温度转换为摄氏温度，以及将摄氏温度转换为华氏温度。
+
+- 将华氏温度转换为摄氏温度
+
+JavaScript 代码:
+
+```jsx
+const fahrenheitToCelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+
+fahrenheitToCelsius(50); // 10
+```
+
+- 将摄氏温度转华氏温度
+
+JavaScript 代码:
+
+```jsx
+const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+
+celsiusToFahrenheit(100); // 212
+```
+
+### 获取字符串中的指定字符数
+
+该函数可以获取空格数和随后的单词数，或者用于获取字符串中某个分隔符的计数
+
+JavaScript 代码:
+
+```jsx
+const characterCount = (str, char) => str.split(char).length - 1;
+
+characterCount("hello world", "l"); // 3
 ```
