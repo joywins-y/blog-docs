@@ -1380,16 +1380,6 @@ const judgeDeviceType = () =>
 judgeDeviceType(); // PC | Mobile
 ```
 
-### 检查设备上的触摸支持
-
-检查文档是否支持 touchstart 事件
-
-JavaScript 代码:
-
-```jsx
-const touchSupported = () => ('ontouchstart' in window || DocumentTouch && doucument instanceof DocumentTouch)
-```
-
 ### Copy text to clipboard (文字复制到剪贴板)
 
 `Clipboard API` 它的所有操作都是异步的，返回`Promise`对象，不会造成页面卡顿。而且，它可以将任意内容（比如图片）放入剪贴板
