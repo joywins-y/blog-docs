@@ -555,7 +555,7 @@ const scrollToTop = (_) => {
 // scrollToTop()
 ```
 
-### Date 日期
+## Date 日期
 
 ### Get days difference between dates (获取两个日期之间相差的天数)
 
@@ -589,7 +589,7 @@ isWeekday(new Date(2022, 03, 11));
 // true
 ```
 
-### 两日期之间相差的天数
+### The difference in days between two dates (两日期之间相差的天数)
 
 日常开发中经常遇到需要显示剩余天数， 一般我们就需要计算两日期之间相差天数
 
@@ -968,7 +968,7 @@ const palindrome = (str) => {
 // palindrome('taco cat') -> true
 ```
 
-#### Reverse a string (反转一个字符串)
+### Reverse a string (反转一个字符串)
 
 使用数组解构和 Array.reverse() 来反转字符串中字符的顺序。使用 join('')合并字符串。JavaScript 代码:
 
