@@ -63,17 +63,4 @@ export default defineConfig({
     ["link", { rel: "ico", href: "/favicon.ico", crossorigin: "" }],
   ],
   ignoreDeadLinks: true,
-  plugins: [
-    [
-      "posts-encrypt",
-      {
-        route: "/auth",
-        passwd: "123456",
-        encryptInDev: true,
-        expires: 1000 * 60,
-        // version >= 0.1.0
-        checkAll: true,
-      },
-    ],
-  ],
 });
