@@ -59,6 +59,12 @@ export default [
       { text: "git 监测文件目录变动", link: "/git/git 监测文件目录变动" }
     ],
   },
+  {
+    text: "Nginx",
+    items: [
+      { text: "Nginx 常用配置", link: "/nginx/nginx-common-configuration" },
+    ],
+  },
   // {
   //   text: "",
   //   items: [
