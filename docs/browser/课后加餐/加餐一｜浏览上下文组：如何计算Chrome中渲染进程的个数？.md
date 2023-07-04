@@ -75,6 +75,7 @@ new_window = window.open("http://time.geekbang.org");
 > 请问老师，https://linkmarket.aliyun.com 内新开的标签页都是新开一个渲染进程，能帮忙解释下吗?
 
 我们先来复现下“芳华年月”所描述的现象，首先打开 linkmarket.aliyun.com 这个标签页，再在这个标签页中随便点击两个链接，然后就打开了两个新的标签页了，如下图所示：
+
 ![Alt text](image-4.png "“例外”情况")
 
 我通过 A 标签页中的链接打开了两个新标签页，B 和 C，而且我们也可以看出来，A、B、C 三个标签页都属于同一站点，正常情况下，它们应该共用同一个渲染进程，不过通过上图我们可以看出来，A、B、C 三个标签页分别使用了三个不同的渲染进程。
@@ -90,6 +91,7 @@ new_window = window.open("http://time.geekbang.org");
 验证了猜测，接下来的我们就是来查查，阿里的这个站点是不是采用了什么特别的手段，移除了这两个标签页之间的连接关系。
 
 我们可以看看实现链接的 HTML 文件，如下图所示：
+
 ![Alt text](image-5.png "链接使用了 rel = noopener")
 
 通过上图，我们可以发现，a 链接的 rel 属性值都使用了 noopener 和 noreferrer，通过 noopener，我们能猜测得到这两个值是让被链接的标签页和当前标签页不要产生连接关系。
@@ -124,9 +126,11 @@ new_window = window.open("http://time.geekbang.org");
 ```
 
 在 Chrome 浏览器中打开上面这个标签页，然后观察 Chrome 的任务管理，我们会发现这个标签页使用了四个渲染进程，如下图所示：
+
 ![Alt text](image-6.png "iframe 使用单独的渲染进程")
 
 结合上图和 HTML 代码，我们可以发现，由于 InfoQ、极客邦两个 iframe 与父标签页不属于同一站点，所以它们会被分配到不同的渲染进程中，而 iframe.html 和源标签页属于同一站点，所以它会和源标签页运行在同一个渲染进程中。下面是我画的计算 iframe 使用渲染进程数目的流程图，你可以对照着参考下：
+
 ![Alt text](image-7.png "计算 iframe 所使用的渲染进程数目")
 
 ## 总结
