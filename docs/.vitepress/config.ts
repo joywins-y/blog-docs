@@ -43,6 +43,11 @@ export default defineConfig({
     },
 
     logo: "logo.png",
+
+    // 开启搜索 参考：https://vitepress.dev/reference/default-theme-search#search
+    search: {
+      provider: "local",
+    },
   },
   locales: {
     root: {
