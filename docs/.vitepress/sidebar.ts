@@ -30,6 +30,7 @@ export default [
       { text: "Cookie 的基本概念", link: "/network/cookie-basic-concept" },
       { text: "Cookie 的 domain 属性", link: "/network/cookie-domain" },
       { text: "ssh root@ip", link: "/network/ssh" },
+      { text: "JavaScript 评测代码运行速度", link: "/network/measure-code-speed" },
     ],
   },
   {
