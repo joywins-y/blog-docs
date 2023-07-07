@@ -1,4 +1,4 @@
-# TCP 协议：如何保证页面文件能被完整送达浏览器
+# 02 | TCP协议：如何保证页面文件能被完整送达浏览器？
 
 ![Alt text](../../public/browser/view-browser/02/cover-picture-02.png)
 
