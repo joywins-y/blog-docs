@@ -41,7 +41,9 @@ GET /index.html HTTP1.1
 
 不过，先不急，在了解网络请求之前，我们需要先看看 HTTP 和 TCP 的关系。因为浏览器使用 HTTP 协议作为应用层协议，用来封装请求的文本信息；并使用 TCP/IP 作传输层协议将它发到网络上，所以在 HTTP 工作开始之前，浏览器需要通过 TCP 与服务器建立连接。也就是说 HTTP 的内容是通过 TCP 的传输数据阶段来实现的，你可以结合下图更好地理解这二者的关系。
 
-![Alt text](../../public/browser/view-browser/03/tcp-http.png "TCP和HTTP的关系示意图")
+![TCP和HTTP的关系示意图](../../public/browser/view-browser/03/tcp-http.png "TCP和HTTP的关系示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">TCP和HTTP的关系示意图</div>
 
 那接下来你可以思考这么“一连串”问题：
 
@@ -73,7 +75,9 @@ GET /index.html HTTP1.1
 
 你可以结合下图来理解，浏览器是如何发送请求信息给服务器的。
 
-![Alt text](../../public/browser/view-browser/03/send-http.png)
+![HTTP 请求数据格式](../../public/browser/view-browser/03/send-http.png "HTTP 请求数据格式")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">HTTP 请求数据格式</div>
 
 首先浏览器会向服务器发送**请求行**，它包括了**请求方法、请求 URI（Uniform Resource Identifier）和 HTTP 版本协议**。
 
@@ -97,7 +101,9 @@ curl -i https://time.geekbang.org/
 
 注意这里加上了-i 是为了返回响应行、响应头和响应体的数据，返回的结果如下图所示，你可以结合这些数据来理解服务器是如何响应浏览器的。
 
-![Alt text](../../public/browser/view-browser/03/image.png "服务器响应的数据格式")
+![服务器响应的数据格式](../../public/browser/view-browser/03/image.png "服务器响应的数据格式")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">服务器响应的数据格式</div>
 
 首先服务器会返回**响应行**，包括协议版本和状态码。
 
@@ -138,7 +144,9 @@ curl -I geekbang.org
 
 注意这里输入的参数是-I，和-i 不一样，-I 表示只需要获取响应头和响应行数据，而不需要获取响应体的数据，最终返回的数据如下图所示：
 
-![Alt text](../../public/browser/view-browser/03/image-1.png "服务器返回响应行和响应头（含重定向格式）")
+![服务器返回响应行和响应头（含重定向格式）](../../public/browser/view-browser/03/image-1.png "服务器返回响应行和响应头（含重定向格式）")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">服务器返回响应行和响应头（含重定向格式）</div>
 
 从图中你可以看到，响应行返回的状态码是 301，状态 301 就是告诉浏览器，我需要重定向到另外一个网址，而需要重定向的网址正是包含在响应头的 Location 字段中，接下来，浏览器获取 Location 字段中的地址，并使用该地址重新导航，这就是一个完整重定向的执行流程。这也就解释了为什么输入的是 geekbang.org，最终打开的却是 https://www.geekbang.org 了。
 
@@ -156,7 +164,9 @@ curl -I geekbang.org
 
 我们重点看下浏览器资源缓存，下面是缓存处理的过程：
 
-![Alt text](../../public/browser/view-browser/03/image-2.png "缓存查找流程示意图")
+![缓存查找流程示意图](../../public/browser/view-browser/03/image-2.png "缓存查找流程示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">缓存查找流程示意图</div>
 
 首先，我们看下服务器是通过什么方式让浏览器缓存数据的？
 
@@ -206,7 +216,9 @@ Cookie: UID=3431uad;
 
 好了，通过这个流程你可以知道浏览器页面状态是通过使用 Cookie 来实现的。Cookie 流程可以参考下图：
 
-![Alt text](../../public/browser/view-browser/03/image-3.png "Cookie 流程图")
+![Cookie 流程图](../../public/browser/view-browser/03/image-3.png "Cookie 流程图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">Cookie 流程图</div>
 
 简单地说，如果服务器端发送的响应头内有 Set-Cookie 的字段，那么浏览器就会将该字段的内容保持到本地。当下次客户端再往该服务器发送请求时，客户端会自动在请求头中加入 Cookie 值后再发送出去。服务器端发现客户端发送过来的 Cookie 后，会去检查究竟是从哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到该用户的状态信息。
 
@@ -216,7 +228,9 @@ Cookie: UID=3431uad;
 
 为了便于你理解，我画了下面这张详细的“HTTP 请求示意图”，用来展现浏览器中的 HTTP 请求所经历的各个阶段。
 
-![Alt text](../../public/browser/view-browser/03/image-4.png "HTTP 请求流程示意图")
+![HTTP 请求流程示意图](../../public/browser/view-browser/03/image-4.png "HTTP 请求流程示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">HTTP 请求流程示意图</div>
 
 从图中可以看到，浏览器中的 HTTP 请求从发起到结束一共经历了如下八个阶段：构建请求、查找缓存、准备 IP 和端口、等待 TCP 队列、建立 TCP 连接、发起 HTTP 请求、服务器处理请求、服务器返回请求和断开连接。
 
@@ -258,8 +272,8 @@ Load: 6.24 s
 set cookie 会不会有安全问题
 
 **A**：
-cookie是不安全的，比如黑客可以通过一些手段插入一些脚本到你的页面里面（具体一些途径我们浏览器安全篇再讲），通过脚本获取到你的cookie数据，然后就可以利用cookie做一些坏事了。
-当然也有一些方法规避，常用的一个是将部分cookie设置成httponly的属性，设置了httponly属性后cookie，就无法通过js脚本来读取了，只是在发送http请求时候会被带上！
+cookie 是不安全的，比如黑客可以通过一些手段插入一些脚本到你的页面里面（具体一些途径我们浏览器安全篇再讲），通过脚本获取到你的 cookie 数据，然后就可以利用 cookie 做一些坏事了。
+当然也有一些方法规避，常用的一个是将部分 cookie 设置成 httponly 的属性，设置了 httponly 属性后 cookie，就无法通过 js 脚本来读取了，只是在发送 http 请求时候会被带上！
 当然还有一些其他防范的方法，这个同样咱们后面在聊！
 
 **Q**：
@@ -269,13 +283,12 @@ cookie是不安全的，比如黑客可以通过一些手段插入一些脚本�
 是没有办法通过前端代码来控制缓存的，缓存是后端或者部署的同学来控制的，但是前端同学应该知道那些内容要被缓存，和后端或者部署的同学配合来打！
 
 **Q**：
-同一个域名同时最多只能建立 6 个 TCP 连接 是不是意思是统一域名同时只能发送6个AJAX请求吗， TCP连接和AJAX请求有什么关系吗
+同一个域名同时最多只能建立 6 个 TCP 连接 是不是意思是统一域名同时只能发送 6 个 AJAX 请求吗， TCP 连接和 AJAX 请求有什么关系吗
 
 **A**：
 首先回答第一个问题：
-”同一个域名同时最多只能建立 6 个 TCP 连接“ 指的不光是指Ajax，还包括页面中的资源加载，只要是一个域名下的资源，浏览器同一时刻最多只支持6个并行请求。
-不过这是HTTP/1.1的规则，HTTP/2已经不用这套规则了，而且HTTP/2也很成熟了，有条件可以考虑切换到HTTP/2.
-Ajax其实就是HTTP请求，包括了XMLHttpRequest和Fetch，HTTP请求是建立在TCP协议之上的。
-
+”同一个域名同时最多只能建立 6 个 TCP 连接“ 指的不光是指 Ajax，还包括页面中的资源加载，只要是一个域名下的资源，浏览器同一时刻最多只支持 6 个并行请求。
+不过这是 HTTP/1.1 的规则，HTTP/2 已经不用这套规则了，而且 HTTP/2 也很成熟了，有条件可以考虑切换到 HTTP/2.
+Ajax 其实就是 HTTP 请求，包括了 XMLHttpRequest 和 Fetch，HTTP 请求是建立在 TCP 协议之上的。
 
 [https://freegeektime.com/100033601/116588/](https://freegeektime.com/100033601/116588/)

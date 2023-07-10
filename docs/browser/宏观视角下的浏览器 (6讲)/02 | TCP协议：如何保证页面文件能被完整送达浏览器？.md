@@ -27,7 +27,10 @@
 如果要想把一个数据包从主机 A 发送给主机 B，那么在传输之前，数据包上会被附加上主机 B 的 IP 地址信息，这样在传输过程中才能正确寻址。额外地，数据包上还会附加上主机 A 本身的 IP 地址，有了这些信息主机 B 才可以回复信息给主机 A。这些附加的信息会被装进一个叫 IP 头的数据结构里。IP 头是 IP 数据包开头的信息，包含 IP 版本、源 IP 地址、目标 IP 地址、生存时间等信息
 
 为了方便理解，我先把网络简单分为三层结构，如下图：
-![Alt text](../../public/browser/view-browser/02/three-tier-model.png "简化的 IP 网络三层传输模型")
+
+![简化的 IP 网络三层传输模型](../../public/browser/view-browser/02/three-tier-model.png "简化的 IP 网络三层传输模型")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">简化的 IP 网络三层传输模型</div>
 
 下面我们一起来看下一个数据包从主机 A 到主机 B 的旅程：
 
@@ -45,7 +48,9 @@ UDP 中一个最重要的信息是端口号，端口号其实就是一个数字�
 
 为了支持 UDP 协议，我把前面的三层结构扩充为四层结构，在网络层和上层之间增加了传输层，如下图所示：
 
-![Alt text](../../public/browser/view-browser/02/four-ayer-model-UDP.png "简化的 UDP 网络四层传输模型")
+![简化的 UDP 网络四层传输模型](../../public/browser/view-browser/02/four-ayer-model-UDP.png "简化的 UDP 网络四层传输模型")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">简化的 UDP 网络四层传输模型</div>
 
 下面我们一起来看下一个数据包从主机 A 旅行到主机 B 的路线：
 
@@ -76,7 +81,9 @@ UDP 中一个最重要的信息是端口号，端口号其实就是一个数字�
 
 下面看看 TCP 下的单个数据包的传输流程：
 
-![Alt text](../../public/browser/view-browser/02/four-ayer-model-TCP.png "简化的 TCP 网络四层传输模型")
+![简化的 TCP 网络四层传输模型](../../public/browser/view-browser/02/four-ayer-model-TCP.png "简化的 TCP 网络四层传输模型")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">简化的 TCP 网络四层传输模型</div>
 
 通过上图你应该可以了解一个数据包是如何通过 TCP 来传输的。TCP 单个数据包的传输流程和 UDP 流程差不多，不同的地方在于，通过 TCP 头的信息保证了一块大的数据传输的完整性。
 
@@ -84,7 +91,9 @@ UDP 中一个最重要的信息是端口号，端口号其实就是一个数字�
 
 从下图可以看出，一个完整的 TCP 连接的生命周期包括了“建立连接”“传输数据”和“断开连接”三个阶段。
 
-![Alt text](../../public/browser/view-browser/02/life-cycle-TCP.png "一个 TCP 连接的生命周期")
+![一个 TCP 连接的生命周期](../../public/browser/view-browser/02/life-cycle-TCP.png "一个 TCP 连接的生命周期")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">一个 TCP 连接的生命周期</div>
 
 - **首先，建立连接阶段**。这个阶段是通过“三次握手”来建立客户端和服务器之间的连接。TCP 提供面向连接的通信传输。面向连接是指在数据通信开始之前先做好两端之间的准备工作。所谓三次握手，是指在建立一个 TCP 连接时，客户端和服务器总共要发送三个数据包以确认连接的建立。
 

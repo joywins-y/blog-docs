@@ -48,7 +48,9 @@ Perfomance 能让我们看到更多细节数据，但是更加复杂，Audits �
 
 最终打开的页面如下图所示：
 
-![Alt text](image-18.png "Audits 界面")
+![Audits 界面](image-18.png "Audits 界面")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">Audits 界面</div>
 
 观察上图中的 Audits 界面，我们可以看到，在生成报告之前，我们需要先配置 Audits，配置模块主要有两部分组成，一个是**监测类型 (Categories)**，另外一个是**设备类型 (Device)**。
 
@@ -74,7 +76,9 @@ Perfomance 能让我们看到更多细节数据，但是更加复杂，Audits �
 
 点击生成报告的按钮之后，我们大约需要等待一分钟左右，Audits 就可以生成最终的分析报告了，如下图所示：
 
-![Alt text](image-19.png "生成的报告图")
+![生成的报告图](image-19.png "生成的报告图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">生成的报告图</div>
 
 观察上图的分析报告，中间圆圈中的数字表示该站点在加载过程中的总体 Web 性能得分，总分是 100 分。我们目前的得分为 46 分，这表示该站点加载阶段的性能还有很大的提升空间。
 
@@ -84,25 +88,33 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 报告的第一个部分是**性能指标 (Metrics)**，如下图所示：
 
-![Alt text](image-20.png "性能指标")
+![性能指标](image-20.png "性能指标")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">性能指标</div>
 
 观察上图，我们可以发现性能指标下面一共有六项内容，这六项内容分别对应了从 Web 应用的加载到页面展示完成的这段时间中，各个阶段所消耗的时长。在中间还有一个 View Trace 按钮，点击该按钮可以跳转到 Performance 标签，并且查看这些阶段在 Performance 中所对应的位置。最下方是加载过程中各个时间段的屏幕截图。
 
 报告的第二个部分是**可优化项 (Opportunities)**，如下图所示：
 
-![Alt text](image-21.png "可优化项 (Opportunities)")
+![可优化项 (Opportunities)](image-21.png "可优化项 (Opportunities)")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">可优化项 (Opportunities)</div>
 
 这些可优化项是 Audits 发现页面中的一些可以直接优化的部分，你可以对照 Audits 给的这些提示来优化你的 Web 应用。
 
 报告的第三部分是**手动诊断 (Diagnostics)**，如下图所示：
 
-![Alt text](image-21.png "手动诊断 (Diagnostics)")
+![手动诊断 (Diagnostics)](image-21.png "手动诊断 (Diagnostics)")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">手动诊断 (Diagnostics)</div>
 
 在手动诊断部分，采集了一些可能存在性能问题的指标，这些指标可能会影响到页面的加载性能，Audits 把详情列出来，并让你依据实际情况，来手动排查每一项。
 
 报告的最后一部分是**运行时设置 (Runtime Settings)**，如下图所示：
 
-![Alt text](image-22.png "运行时设置 (Runtime Settings)")
+![运行时设置 (Runtime Settings)](image-22.png "运行时设置 (Runtime Settings)")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">运行时设置 (Runtime Settings)</div>
 
 观察上图，这是运行时的一些基本数据，如果选择移动设备模式，你可以看到发送网络请求时的 User Agent 会变成设备相关信息，还有会模拟设备的网速，这个体现在网络限速上。
 
@@ -119,7 +131,9 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 那么接下来我会逐一分析六项指标的含义，并讨论如何提升这六项指标的数值。这六项都是页面在加载过程中的性能指标，所以要弄明白这六项指标的具体含义，我们还得结合页面的加载过程来分析。一图胜过千言，我们还是先看下面这张页面从加载到展示的过程图：
 
-![Alt text](image-23.png "页面加载过程")
+![页面加载过程](image-23.png "页面加载过程")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">页面加载过程</div>
 
 观察上图的页面加载过程，我们发现，在渲染进程确认要渲染当前的请求后，渲染进程会创建一个空白页面，我们把创建空白页面的这个时间点称为 **First Paint**，简称 **FP**。
 

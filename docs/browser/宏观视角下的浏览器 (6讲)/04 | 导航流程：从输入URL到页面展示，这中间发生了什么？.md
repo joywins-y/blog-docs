@@ -6,7 +6,9 @@
 
 那么今天我们就一起来探索下这个流程，下图是我梳理出的“从输入 URL 到页面展示完整流程示意图”：
 
-![Alt text](../../public/browser/view-browser/04/image-3.png "从输入 URL 到页面展示完整流程示意图")
+![从输入 URL 到页面展示完整流程示意图](../../public/browser/view-browser/04/image-3.png "从输入 URL 到页面展示完整流程示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">从输入 URL 到页面展示完整流程示意图</div>
 
 从图中可以看出，整个过程需要各个进程之间的配合，所以在开始正式流程之前，我们还是先来快速回顾下浏览器进程、渲染进程和网络进程的主要职责。
 
@@ -37,7 +39,9 @@
 
 当用户输入关键字并键入回车之后，浏览器便进入下图的状态：
 
-![Alt text](../../public/browser/view-browser/04/image-1.png "开始加载 URL 浏览器状态")
+![开始加载 URL 浏览器状态](../../public/browser/view-browser/04/image-1.png "开始加载 URL 浏览器状态")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">开始加载 URL 浏览器状态</div>
 
 从图中可以看出，当浏览器刚开始加载一个地址之后，标签页上的图标便进入了加载状态。但此时图中页面显示的依然是之前打开的页面内容，并没立即替换为极客时间的页面。因为需要等待提交文档阶段，页面内容才会被替换。
 
@@ -62,7 +66,9 @@ curl -I http://time.geekbang.org/
 
 `curl -I + URL` 的命令是接收服务器返回的响应头的信息。执行命令后，我们看到服务器返回的响应头信息如下：
 
-![Alt text](../../public/browser/view-browser/04/image-2.png "响应行返回状态码 301")
+![响应行返回状态码 301](../../public/browser/view-browser/04/image-2.png "响应行返回状态码 301")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">响应行返回状态码 301</div>
 
 从图中可以看出，极客时间服务器会通过重定向的方式把所有 HTTP 请求转换为 HTTPS 请求。也就是说你使用 HTTP 向极客时间服务器请求时，服务器会返回一个包含有 301 或者 302 状态码响应头，并把响应头的 Location 字段中填上 HTTPS 的地址，这就是告诉了浏览器要重新导航到新的地址上。
 
@@ -74,7 +80,9 @@ curl -I https://time.geekbang.org/
 
 我们看到服务器返回如下信息：
 
-![Alt text](../../public/browser/view-browser/04/image-4.png "响应行返回状态码 200")
+![响应行返回状态码 200](../../public/browser/view-browser/04/image-4.png "响应行返回状态码 200")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">响应行返回状态码 200</div>
 
 从图中可以看出，服务器返回的响应头的状态码是 200，这是告诉浏览器一切正常，可以继续往下处理该请求了。
 
@@ -94,7 +102,9 @@ curl -I https://time.geekbang.org/
 
 返回信息如下图：
 
-![Alt text](../../public/browser/view-browser/04/image-5.png "含有 HTML 格式的 Content-Type")
+![含有 HTML 格式的 Content-Type](../../public/browser/view-browser/04/image-5.png "含有 HTML 格式的 Content-Type")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">含有 HTML 格式的 Content-Type</div>
 
 从图中可以看到，响应头中的 Content-type 字段的值是 text/html，这就是告诉浏览器，服务器返回的数据是 HTML 格式。
 
@@ -106,7 +116,9 @@ curl -I https://res001.geekbang.org/apps/geektime/android/2.3.1/official/geektim
 
 请求后返回的响应头信息如下：
 
-![Alt text](../../public/browser/view-browser/04/image-6.png "含有 stream 格式的 Content-Type")
+![含有 stream 格式的 Content-Type](../../public/browser/view-browser/04/image-6.png "含有 stream 格式的 Content-Type")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">含有 stream 格式的 Content-Type</div>
 
 从返回的响应头信息来看，其 Content-Type 的值是 application/octet-stream，显示数据是**字节流类型**的，通常情况下，浏览器会按照**下载类型**来处理该请求。
 
@@ -120,7 +132,9 @@ curl -I https://res001.geekbang.org/apps/geektime/android/2.3.1/official/geektim
 
 比如我从极客时间的首页里面打开了另外一个页面——算法训练营，我们看下图的 Chrome 的任务管理器截图：
 
-![Alt text](../../public/browser/view-browser/04/image-7.png "多个页面运行在一个渲染进程中")
+![多个页面运行在一个渲染进程中](../../public/browser/view-browser/04/image-7.png "多个页面运行在一个渲染进程中")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">多个页面运行在一个渲染进程中</div>
 
 从图中可以看出，打开的这三个页面都是运行在同一个渲染进程中，进程 ID 是 23601。
 
@@ -140,7 +154,9 @@ Chrome 的默认策略是，每个标签对应一个渲染进程。但**如果�
 
 那若新页面和当前页面不属于同一站点，情况又会发生什么样的变化呢？比如我通过极客邦页面里的链接打开 InfoQ 的官网（https://www.infoq.cn/ ）， 因为 infoq.cn 和 geekbang.org 不属于同一站点，所以 infoq.cn 会使用一个新的渲染进程，你可以参考下图：
 
-![Alt text](../../public/browser/view-browser/04/image-8.png "非同一站点使用不同的渲染进程")
+![非同一站点使用不同的渲染进程](../../public/browser/view-browser/04/image-8.png "非同一站点使用不同的渲染进程")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">非同一站点使用不同的渲染进程</div>
 
 从图中任务管理器可以看出：由于极客邦和极客时间的标签页拥有**相同的协议和根域名**，所以它们属于**同一站点**，并运行在同一个渲染进程中；而 infoq.cn 的根域名不同于 geekbang.org，也就是说 InfoQ 和极客邦不属于同一站点，因此它们会运行在两个不同的渲染进程之中。
 
@@ -163,7 +179,9 @@ Chrome 的默认策略是，每个标签对应一个渲染进程。但**如果�
 
 其中，当渲染进程确认提交之后，更新内容如下图所示：
 
-![Alt text](../../public/browser/view-browser/04/image-9.png "导航完成状态")
+![导航完成状态](../../public/browser/view-browser/04/image-9.png "导航完成状态")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">导航完成状态</div>
 
 这也就解释了为什么在浏览器的地址栏里面输入了一个地址后，之前的页面没有立马消失，而是要加载一会儿才会更新页面。
 
@@ -173,7 +191,9 @@ Chrome 的默认策略是，每个标签对应一个渲染进程。但**如果�
 
 一旦文档被提交，渲染进程便开始页面解析和子资源加载了，关于这个阶段的完整过程，我会在下一篇文章中来专门介绍。这里你只需要先了解一旦页面生成完成，渲染进程会发送一个消息给浏览器进程，浏览器接收到消息后，会停止标签图标上的加载动画。如下所示：
 
-![Alt text](../../public/browser/view-browser/04/image-10.png "渲染结束")
+![渲染结束](../../public/browser/view-browser/04/image-10.png "渲染结束")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">渲染结束</div>
 
 至此，一个完整的页面就生成了。那文章开头的“从输入 URL 到页面展示，这中间发生了什么？”这个过程极其“串联”的问题也就解决了。
 

@@ -8,17 +8,19 @@
 
 在开始之前，我们一起看下，Chrome 打开一个页面需要启动多少进程？你可以点击 Chrome 浏览器右上角的“选项”菜单，选择“更多工具”子菜单，点击“任务管理器”，这将打开 Chrome 的任务管理器的窗口，如下图：
 
-![Alt text](../../public/browser/view-browser/01/task-manager.png "Chrome 的任务管理器窗口")
+![Chrome 的任务管理器窗口](../../public/browser/view-browser/01/task-manager.png "Chrome 的任务管理器窗口")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">Chrome 的任务管理器窗口</div>
 
 和 Windows 任务管理器一样，Chrome 任务管理器也是用来展示运行中 Chrome 使用的进程信息的。从图中可以看到，Chrome 启动了 4 个进程，你也许会好奇，只是打开了 1 个页面，为什么要启动这么多进程呢？
 
 在解答这个问题之前，我们需要了解一下进程的概念，不过由于好多人容易把进程和线程的概念混淆，从而影响后续其他概念的理解，所以这里我就将这两个概念以及它们之间的关系一并为你讲解下。
 
-## 1. <a name=''></a>进程和线程
+## 1. 进程和线程
 
 不过，在介绍进程和线程之前，我需要先讲解下什么是并行处理，因为如果你理解了并行处理的概念，那么再理解进程和线程之间的关系就会变得轻松许多。
 
-### 1.1. <a name='-1'></a>什么是并行处理
+### 1.1. 什么是并行处理
 
 计算机中的并行处理就是同一时刻处理多个任务，比如我们要计算下面这三个表达式的值，并显示出结果
 
@@ -44,7 +46,7 @@ C = 7 * 8;
 
 通过对比分析，你会发现用单线程执行需要四步，而使用多线程只需要两步。因此，使用**并行处理能大大提升性能**。
 
-### 1.2. <a name='VS'></a>线程 VS 进程
+### 1.2. 线程 VS 进程
 
 多线程可以并行处理任务，但是**线程是不能单独存在的，它是由进程来启动和管理的**。那什么又是进程呢？
 
@@ -53,6 +55,8 @@ C = 7 * 8;
 为了让你更好地理解上述计算过程，我画了下面这张对比图：
 
 ![单线程与多线程的进程对比图](../../public/browser/view-browser/01/process-threading.png "单线程与多线程的进程对比图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">单线程与多线程的进程对比图</div>
 
 从图中可以看到，**线程是依附于进程的，而进程中使用多线程并行处理能提升运算效率**。
 
@@ -76,6 +80,8 @@ C = 7 * 8;
 
 ![线程之间共享进程中的数据示意图](../../public/browser/view-browser/01/shared-process.png "线程之间共享进程中的数据示意图")
 
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">线程之间共享进程中的数据示意图</div>
+
 从上图可以看出，线程 1、线程 2、线程 3 分别把执行的结果写入 A、B、C 中，然后线程 2 继续从 A、B、C 中读取数据，用来显示执行结果。
 
 **3. 当一个进程关闭之后，操作系统会回收进程所占用的内存。**
@@ -88,11 +94,13 @@ C = 7 * 8;
 
 进程隔离是为保护操作系统中进程互不干扰的技术，每一个进程只能访问自己占有的数据，也就避免出现进程 A 写入数据到进程 B 的情况。正是因为进程之间的数据是严格隔离的，所以一个进程如果崩溃了，或者挂起了，是不会影响到其他进程的。如果进程之间需要进行数据的通信，这时候，就需要使用用于进程间通信（IPC）的机制了。
 
-## 2. <a name='-1'></a>单进程浏览器时代
+## 2. 单进程浏览器时代
 
 在了解了进程和线程之后，我们再来一起看下单进程浏览器的架构。顾名思义，**单进程浏览器是指浏览器的所有功能模块都是运行在同一个进程里**，这些模块包含了网络、插件、JavaScript 运行环境、渲染引擎和页面等。其实早在 2007 年之前，市面上浏览器都是单进程的。单进程浏览器的架构如下图所示：
 
-![单进程浏览器架构示意图](../../public/browser/view-browser/01/single-process-browser.png)
+![单进程浏览器架构示意图](../../public/browser/view-browser/01/single-process-browser.png "单进程浏览器架构示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">单进程浏览器架构示意图</div>
 
 如此多的功能模块运行在一个进程里，是导致单进程浏览器**不稳定**、**不流畅**和**不安全**的一个主要因素。下面我就来一一分析下出现这些问题的原因：
 
@@ -133,15 +141,17 @@ freeze();
 
 以上这些就是当时浏览器的特点，不稳定，不流畅，而且不安全。这是一段不堪回首的过去，也许你没有经历过，不过你可以想象一下这样的场景：当你正在用浏览器打开多个页面时，突然某个页面崩溃了或者失去响应，随之而来的是整个浏览器的崩溃或者无响应，然后你发现你给老板写的邮件页面也随之消失了，这时你的心情会不会和页面一样崩溃呢？
 
-## 3. <a name='-1'></a>多进程浏览器时代
+## 3. 多进程浏览器时代
 
 好在现代浏览器已经解决了这些问题，是如何解决的呢？这就得聊聊我们这个“多进程浏览器时代”了
 
-### 3.1. <a name='-1'></a>早期多进程架构
+### 3.1. 早期多进程架构
 
 你可以先看看下面这张图，这是 2008 年 Chrome 发布时的进程架构。
 
 ![早期 Chrome 进程架构图](../../public/browser/view-browser/01/early-chrome.png "早期 Chrome 进程架构图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">早期 Chrome 进程架构图</div>
 
 从图中可以看出，Chrome 的页面是运行在单独的渲染进程中的，同时页面里的插件也是运行在单独的插件进程之中，而进程之间是通过 IPC 机制进行通信（如图中虚线部分）。
 
@@ -155,11 +165,13 @@ freeze();
 
 好了，分析完早期的 Chrome 浏览器后，相信你已经了解了浏览器采用多进程架构的必要性。
 
-### 3.2. <a name='-1'></a>目前多进程架构
+### 3.2. 目前多进程架构
 
 不过 Chrome 的发展是滚滚向前的，相较之前，目前的架构又有了很多新的变化。我们先看看最新的 Chrome 进程架构，你可以参考下图：
 
-![Alt text](../../public/browser/view-browser/01/latest-chrome.png "最新的 Chrome 进程架构图")
+![最新的 Chrome 进程架构图](../../public/browser/view-browser/01/latest-chrome.png "最新的 Chrome 进程架构图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">最新的 Chrome 进程架构图</div>
 
 从图中可以看出，最新的 Chrome 浏览器包括：1 个浏览器（browser）主进程、1 个 GPU 进程、1 个网络（NetWork）进程、多个渲染进程和多个插件进程。
 
@@ -185,13 +197,15 @@ freeze();
 
 对于上面这两个问题，Chrome 团队一直在寻求一种弹性方案，既可以解决资源占用高的问题，也可以解决复杂的体系架构的问题
 
-### 3.3. <a name='-1'></a>未来面向服务的架构
+### 3.3. 未来面向服务的架构
 
 为了解决这些问题，在 2016 年，Chrome 官方团队使用“**面向服务的架构**”（Services Oriented Architecture，简称 **SOA**）的思想设计了新的 Chrome 架构。也就是说 Chrome 整体架构会朝向现代操作系统所采用的“面向服务的架构” 方向发展，原来的各种模块会被重构成独立的服务（Service），每个服务（Service）都可以在独立的进程中运行，访问服务（Service）必须使用定义好的接口，通过 IPC 来通信，从而**构建一个更内聚、松耦合、易于维护和扩展的系统**，更好实现 Chrome 简单、稳定、高速、安全的目标。如果你对面向服务的架构感兴趣，你可以去网上搜索下资料，这里就不过多介绍了。
 
 Chrome 最终要把 UI、数据库、文件、设备、网络等模块重构为基础服务，类似操作系统底层服务，下面是 Chrome“面向服务的架构”的进程模型图：
 
-![Alt text](../../public/browser/view-browser/01/service-oriented.png "Chrome “面向服务的架构” 进程模型图")
+![Chrome “面向服务的架构” 进程模型图](../../public/browser/view-browser/01/service-oriented.png "Chrome “面向服务的架构” 进程模型图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">Chrome “面向服务的架构” 进程模型图</div>
 
 目前 Chrome 正处在老的架构向服务化架构过渡阶段，这将是一个漫长的迭代过程。
 
@@ -199,9 +213,11 @@ Chrome 正在逐步构建 Chrome 基础服务（Chrome Foundation Service），�
 
 同时 Chrome 还提供灵活的弹性架构，在强大性能设备上会以多进程的方式运行基础服务，但是如果在资源受限的设备上（如下图），Chrome 会将很多服务整合到一个进程中，从而节省内存占用。
 
-![Alt text](../../public/browser/view-browser/01/service-consolidation.png "在资源不足的设备上，将服务合并到浏览器进程中")
+![在资源不足的设备上，将服务合并到浏览器进程中](../../public/browser/view-browser/01/service-consolidation.png "在资源不足的设备上，将服务合并到浏览器进程中")
 
-## 4. <a name='-1'></a>总结
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">在资源不足的设备上，将服务合并到浏览器进程中</div>
+
+## 4. 总结
 
 好了，今天就到这里，下面我来简要梳理并总结今天的内容。
 
@@ -213,7 +229,7 @@ Chrome 正在逐步构建 Chrome 基础服务（Chrome Foundation Service），�
 
 总体说来，**Chrome 是以一个非常快速的速度在进化，越来越多的业务和应用都逐渐转至浏览器来开发，身为开发人员，我们不能坐视不管，而应该紧跟其步伐，收获这波技术红利**。
 
-## 5. <a name='-1'></a>思考时间
+## 5. 思考时间
 
 最后，给你留个思考题：回顾浏览器的进化路线，你认为推动浏览器发展的主要动力是什么？
 
