@@ -2,6 +2,10 @@
 
 ![a](../../public/browser/view-browser/06/10001.webp)
 
+<audio src="../mp3/06-渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？.mp3" preload="none" controls loop style="width: 100%;">
+  你的浏览器不支持 audio 标签。
+</audio>
+
 在上篇文章中，我们介绍了渲染流水线中的 **DOM 生成**、**样式计算**和**布局**三个阶段，那今天我们接着讲解渲染流水线后面的阶段。
 
 这里还是先简单回顾下上节前三个阶段的主要内容：在 HTML 页面内容被提交给渲染引擎之后，渲染引擎首先将 HTML 解析为浏览器可以理解的 DOM；然后根据 CSS 样式表，计算出 DOM 树所有节点的样式；接着又计算每个元素的几何坐标位置，并将这些信息保存在布局树中。

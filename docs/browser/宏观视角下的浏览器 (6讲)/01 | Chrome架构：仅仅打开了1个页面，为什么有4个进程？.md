@@ -2,6 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/01/cover-picture-01.png)
 
+<audio src="../mp3/01-Chrome架构：仅仅打开了1个页面，为什么有4个进程？.mp3" preload="none" controls loop style="width: 100%;">
+  你的浏览器不支持 audio 标签。
+</audio>
+
 无论你是想要设计高性能 Web 应用，还是要优化现有的 Web 应用，你都需要了解浏览器中的网络流程、页面渲染过程，JavaScript 执行流程，以及 Web 安全理论，而这些功能是分散在浏览器的各个功能组件中的，比较多、比较散，要怎样学习才能掌握呢？通过浏览器的多进程架构的学习，你就可以把这些分散的知识点串起来，组成一张网，从而让自己能站在更高的维度去理解 Web 应用。
 
 因此，**学习浏览器的多进程架构是很有必要的**。需要说明的是，在本专栏中，**所有的分析都是基于 Chrome 浏览器的**。那么多浏览器，为什么偏偏选择 Chrome 浏览器呢？因为 Chrome、微软的 Edge 以及国内的大部分主流浏览器，都是基于 Chromium 二次开发而来；而 Chrome 是 Google 的官方发行版，特性和 Chromium 基本一样，只存在一些产品层面差异；再加上 Chrome 是目前世界上使用率最高的浏览器，所以 **Chrome 最具代表性**。

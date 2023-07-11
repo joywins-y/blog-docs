@@ -2,6 +2,10 @@
 
 ![Alt text](../../public/browser/js-execution-mechanism/11/cover-picture-11.png)
 
+<audio src="../mp3/11-this：从JavaScript执行上下文的视角讲清楚this.mp3" preload="none" controls loop style="width: 100%;">
+  你的浏览器不支持 audio 标签。
+</audio>
+
 在上篇文章中，我们讲了词法作用域、作用域链以及闭包，并在最后思考题中留了下面这样一段代码：
 
 ```js

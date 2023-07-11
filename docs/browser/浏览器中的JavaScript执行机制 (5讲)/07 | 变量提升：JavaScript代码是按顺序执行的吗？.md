@@ -2,6 +2,10 @@
 
 ![Alt text](../../public/browser/js-execution-mechanism/07/cover-picture-07.png)
 
+<audio src="../mp3/07-变量提升：JavaScript代码是按顺序执行的吗？.mp3" preload="none" controls loop style="width: 100%;">
+  你的浏览器不支持 audio 标签。
+</audio>
+
 讲解完宏观视角下的浏览器后，从这篇文章开始，我们就进入下一个新的模块了，这里我会对 JavaScript 执行原理做深入介绍。
 
 今天在该模块的第一篇文章，我们主要讲解**执行上下文**相关的内容。那为什么先讲执行上下文呢？它这么重要吗？可以这么说，**只有理解了 JavaScrip 的执行上下文，你才能更好地理解 JavaScript 语言本身**，比如变量提升、作用域和闭包等。不仅如此，理解执行上下文和调用栈的概念还能助你成为一名更合格的前端开发者。

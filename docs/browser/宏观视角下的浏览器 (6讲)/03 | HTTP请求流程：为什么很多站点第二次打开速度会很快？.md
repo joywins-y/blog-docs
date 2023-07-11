@@ -2,6 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/03/cover-picture-03.png)
 
+<audio src="../mp3/03-HTTP请求流程：为什么很多站点第二次打开速度会很快？.mp3" preload="none" controls loop style="width: 100%;">
+  你的浏览器不支持 audio 标签。
+</audio>
+
 一个 TCP 连接过程包括了建立连接、传输数据和断开连接三个阶段。
 
 而 HTTP 协议，正是建立在 TCP 连接基础之上的。**HTTP 是一种允许浏览器向服务器获取资源的协议，是 Web 的基础**，通常由浏览器发起请求，用来获取不同类型的文件，例如 HTML 文件、CSS 文件、JavaScript 文件、图片、视频等。此外，**HTTP 也是浏览器使用最广的协议**，所以要想学好浏览器，就要先深入了解 HTTP。
