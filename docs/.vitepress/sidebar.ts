@@ -30,7 +30,10 @@ export default [
       { text: "Cookie 的基本概念", link: "/network/cookie-basic-concept" },
       { text: "Cookie 的 domain 属性", link: "/network/cookie-domain" },
       { text: "ssh root@ip", link: "/network/ssh" },
-      { text: "JavaScript 评测代码运行速度", link: "/network/measure-code-speed" },
+      {
+        text: "JavaScript 评测代码运行速度",
+        link: "/network/measure-code-speed",
+      },
     ],
   },
   {
@@ -54,10 +57,40 @@ export default [
     ],
   },
   {
+    text: "实用 JavaScript 代码片段",
+    items: [
+      { text: "Array 数组", link: "/javascript/useful-js-snippets/array" },
+      { text: "Number 数字", link: "/javascript/useful-js-snippets/number" },
+      { text: "Object 对象", link: "/javascript/useful-js-snippets/object" },
+      { text: "String 字符串", link: "/javascript/useful-js-snippets/string" },
+      {
+        text: "Function 函数",
+        link: "/javascript/useful-js-snippets/function",
+      },
+      { text: "Math 数学方法", link: "/javascript/useful-js-snippets/math" },
+      { text: "Media 媒体", link: "/javascript/useful-js-snippets/media" },
+      {
+        text: "Digital Conversion 数字转换",
+        link: "/javascript/useful-js-snippets/digital-conversion",
+      },
+      {
+        text: "Browser 浏览器",
+        link: "/javascript/useful-js-snippets/browser",
+      },
+      { text: "Date 日期", link: "/javascript/useful-js-snippets/date" },
+      { text: "Regular 正则", link: "/javascript/useful-js-snippets/regular" },
+      { text: "Node", link: "/javascript/useful-js-snippets/node" },
+      {
+        text: "Utility 实用函数",
+        link: "/javascript/useful-js-snippets/utility",
+      },
+    ],
+  },
+  {
     text: "Git",
     items: [
       { text: "git cherry-pick 的使用", link: "/git/git cherry-pick 的使用" },
-      { text: "git 监测文件目录变动", link: "/git/git 监测文件目录变动" }
+      { text: "git 监测文件目录变动", link: "/git/git 监测文件目录变动" },
     ],
   },
   {
