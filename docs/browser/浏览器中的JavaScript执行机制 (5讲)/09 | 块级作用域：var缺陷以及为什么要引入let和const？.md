@@ -1,8 +1,8 @@
 # 09 | 块级作用域：var 缺陷以及为什么要引入 let 和 const？
 
-![Alt text](../../public/browser/js-execution-mechanism/00/cover-picture-09.png)
+![Alt text](../../public/browser/js-execution-mechanism/09/cover-picture-09.png)
 
-在前面[《07 | 变量提升：JavaScript 代码是按顺序执行的吗？.md》](07%20%7C%20%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%9AJavaScript%E4%BB%A3%E7%A0%81%E6%98%AF%E6%8C%89%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F.md)这篇文章中，我们已经讲解了 JavaScript 中变量提升的相关内容，**正是由于 JavaScript 存在变量提升这种特性，从而导致了很多与直觉不符的代码，这也是 JavaScript 的一个重要设计缺陷**。
+在前面[《07 | 变量提升：JavaScript 代码是按顺序执行的吗？》](07%20%7C%20%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%9AJavaScript%E4%BB%A3%E7%A0%81%E6%98%AF%E6%8C%89%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F.md)这篇文章中，我们已经讲解了 JavaScript 中变量提升的相关内容，**正是由于 JavaScript 存在变量提升这种特性，从而导致了很多与直觉不符的代码，这也是 JavaScript 的一个重要设计缺陷**。
 
 虽然 ECMAScript6（以下简称 ES6）已经通过引入块级作用域并配合 let、const 关键字，来避开了这种设计缺陷，但是由于 JavaScript 需要保持向下兼容，所以变量提升在相当长一段时间内还会继续存在。这也加大了你理解概念的难度，因为既要理解新的机制，又要理解变量提升这套机制，关键这两套机制还是同时运行在“一套”系统中的。
 
