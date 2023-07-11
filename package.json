@@ -6,6 +6,10 @@
     "docs:preview": "vitepress preview docs --port 8080"
   },
   "dependencies": {
+    "@types/node": "^20.4.1",
+    "escape-html": "^1.0.3",
+    "markdown-it-container": "^3.0.0",
+    "prismjs": "^1.29.0",
     "vue": "^3.3.2"
   },
   "devDependencies": {

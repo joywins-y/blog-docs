@@ -1,17 +1,19 @@
 import { defineConfig, defineConfigWithTheme } from "vitepress";
 import sidebar from "./sidebar";
+import { markdownConfig } from "./plugins/markdown-plugin";
+import navbar from "./navbar";
 
 // https://vitepress.dev/reference/site-config
 defineConfigWithTheme;
 export default defineConfig({
   title: "My Blog Docs",
   description: "A VitePress Site",
+  markdown: {
+    config: markdownConfig,
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: navbar,
 
     sidebar: sidebar,
 
@@ -42,11 +44,18 @@ export default defineConfig({
       next: "Proxima pagina",
     },
 
-    logo: "logo.png",
+    // 表示docs/public/logo.png
+    logo: "/logo.png",
 
     // 开启搜索 参考：https://vitepress.dev/reference/default-theme-search#search
     search: {
       provider: "local",
+    },
+
+    // 开启右侧文章内的标题目录
+    outline: {
+      level: [2, 6], // 配置h2-h6级的标题，默认只展示h2
+      label: "目录",
     },
   },
   locales: {
