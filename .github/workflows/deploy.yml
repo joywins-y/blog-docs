@@ -10,7 +10,7 @@
 #         permissions:
 #             pages: write
 #             id-token: write
-#         environment: 
+#         environment:
 #             name: github-pages
 #             url: ${{ steps.deployment.outputs.page_url }}
 #         steps:
@@ -18,7 +18,7 @@
 #               with:
 #                 fetch-depth: 0
 #             - uses: actions/setup-node@3
-#               with: 
+#               with:
 #                 node-version: 16
 #                 cache: npm
 #             - run: npm cli
@@ -31,3 +31,33 @@
 #             - name: Deploy
 #               id: deployment
 #               uses: actions/deploy-pages@v1
+
+#!/usr/bin/env sh
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
