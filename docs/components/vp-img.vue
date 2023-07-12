@@ -10,30 +10,17 @@ export default {
     props: {
         src: {
             type: String,
-            required: true,
         },
         text: {
             type: String,
-            required: true,
         }
     },
-    created() {
-        // props 会暴露到 `this` 上
-        // console.log(this.text)
-    },
-    methods: {
-        handleSrc(){
-            console.log(this.src);
-            console.log();
-        }
-    }
 }
 
 </script>
 
 <style scoped>
-.container {
-}
+.container {}
 
 .text {
     text-align: center;

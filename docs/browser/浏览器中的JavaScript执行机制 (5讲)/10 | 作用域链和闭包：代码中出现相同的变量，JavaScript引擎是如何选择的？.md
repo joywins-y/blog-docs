@@ -1,6 +1,6 @@
 # 10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript 引擎是如何选择的？
 
-![Alt text](../../public/browser/js-execution-mechanism/10/cover-picture-10.png)
+![Alt text](../../public/browser/js-execution-mechanism/10/cover-picture-10-0.png)
 
 <audio src="../mp3/10-作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.mp3" preload="none" controls loop style="width: 100%;">
   你的浏览器不支持 audio 标签。

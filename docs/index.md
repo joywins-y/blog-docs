@@ -15,10 +15,13 @@ hero:
       link: https://github.com/joywins-y/blog-docs
 
 features:
-  - title: Feature A
+  - icon: 👩‍💻
+    title: Web 前端
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+  - icon: 🤹‍♀️
+    title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 🍀
+    title: Aspiration
+    details: 所思皆如愿
 ---
