@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/js-execution-mechanism/10/cover-picture-10-0.png)
 
-<audio src="../mp3/10-作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/10-作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/10-作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 在[上一篇文章](09%20%7C%20%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%9Avar%E7%BC%BA%E9%99%B7%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%95%E5%85%A5let%E5%92%8Cconst%EF%BC%9F.md)中我们讲到了什么是作用域，以及 ES6 是如何通过变量环境和词法环境来同时支持变量提升和块级作用域，在最后我们也提到了如何通过词法环境和变量环境来查找变量，这其中就涉及到**作用域链**的概念。

@@ -10,8 +10,10 @@ import VpImg from '../../components/vp-img.vue';
 <VpImg src="../../public/browser/js-execution-mechanism/08/cover-picture-08.png" text=""></VpImg>
 ::: -->
 
-<audio src="../mp3/08-调用栈：为什么JavaScript代码会出现栈溢出？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/08-调用栈：为什么JavaScript代码会出现栈溢出？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/08-调用栈：为什么JavaScript代码会出现栈溢出？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 在上篇文章中，我们讲到了，当一段代码被执行时，JavaScript 引擎先会对其进行编译，并创建执行上下文。但是并没有明确说明到底什么样的代码才算符合规范。

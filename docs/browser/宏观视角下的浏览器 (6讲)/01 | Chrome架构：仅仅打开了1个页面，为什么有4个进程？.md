@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/01/cover-picture-01.png)
 
-<audio src="../mp3/01-Chrome架构：仅仅打开了1个页面，为什么有4个进程？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/01-Chrome架构：仅仅打开了1个页面，为什么有4个进程？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/01-Chrome架构：仅仅打开了1个页面，为什么有4个进程？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 无论你是想要设计高性能 Web 应用，还是要优化现有的 Web 应用，你都需要了解浏览器中的网络流程、页面渲染过程，JavaScript 执行流程，以及 Web 安全理论，而这些功能是分散在浏览器的各个功能组件中的，比较多、比较散，要怎样学习才能掌握呢？通过浏览器的多进程架构的学习，你就可以把这些分散的知识点串起来，组成一张网，从而让自己能站在更高的维度去理解 Web 应用。

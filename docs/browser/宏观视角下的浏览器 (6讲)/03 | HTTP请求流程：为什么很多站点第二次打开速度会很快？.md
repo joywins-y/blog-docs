@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/03/cover-picture-03.png)
 
-<audio src="../mp3/03-HTTP请求流程：为什么很多站点第二次打开速度会很快？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/03-HTTP请求流程：为什么很多站点第二次打开速度会很快？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/03-HTTP请求流程：为什么很多站点第二次打开速度会很快？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 一个 TCP 连接过程包括了建立连接、传输数据和断开连接三个阶段。

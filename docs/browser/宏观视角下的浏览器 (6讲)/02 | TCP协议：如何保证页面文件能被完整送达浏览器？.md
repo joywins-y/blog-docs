@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/02/cover-picture-02.png)
 
-<audio src="../mp3/02-TCP协议：如何保证页面文件能被完整送达浏览器？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/02-TCP协议：如何保证页面文件能被完整送达浏览器？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/02-TCP协议：如何保证页面文件能被完整送达浏览器？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 在衡量 Web 页面性能的时候有一个重要的指标叫“FP（First Paint）”，是指从页面加载到首次开始绘制的时长。这个指标直接影响了用户的跳出率，更快的页面响应意味着更多的 PV、更高的参与度，以及更高的转化率。那什么影响 FP 指标呢？其中一个重要的因素是网络加载速度。

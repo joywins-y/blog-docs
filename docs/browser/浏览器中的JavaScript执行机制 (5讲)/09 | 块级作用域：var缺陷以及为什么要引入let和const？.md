@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/js-execution-mechanism/09/cover-picture-09.png)
 
-<audio src="../mp3/09-块级作用域：var缺陷以及为什么要引入let和const？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/09-块级作用域：var缺陷以及为什么要引入let和const？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/09-块级作用域：var缺陷以及为什么要引入let和const？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 在前面[《07 | 变量提升：JavaScript 代码是按顺序执行的吗？》](07%20%7C%20%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%9AJavaScript%E4%BB%A3%E7%A0%81%E6%98%AF%E6%8C%89%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F.md)这篇文章中，我们已经讲解了 JavaScript 中变量提升的相关内容，**正是由于 JavaScript 存在变量提升这种特性，从而导致了很多与直觉不符的代码，这也是 JavaScript 的一个重要设计缺陷**。

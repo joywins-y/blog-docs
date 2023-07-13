@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/05/cover-picture-05.webp)
 
-<audio src="../mp3/05-渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/05-渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/05-渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 在上一篇文章中我们介绍了导航相关的流程，那导航被提交后又会怎么样呢？就进入了渲染阶段。这个阶段很重要，了解其相关流程能让你“看透”页面是如何工作的，有了这些知识，你可以解决一系列相关的问题，比如能熟练使用开发者工具，因为能够理解开发者工具里面大部分项目的含义，能优化页面卡顿问题，使用 JavaScript 优化动画流程，通过优化样式表来防止强制同步布局，等等。

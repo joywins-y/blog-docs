@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/js-execution-mechanism/07/cover-picture-07.png)
 
-<audio src="../mp3/07-变量提升：JavaScript代码是按顺序执行的吗？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/07-变量提升：JavaScript代码是按顺序执行的吗？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/07-变量提升：JavaScript代码是按顺序执行的吗？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 讲解完宏观视角下的浏览器后，从这篇文章开始，我们就进入下一个新的模块了，这里我会对 JavaScript 执行原理做深入介绍。

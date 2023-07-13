@@ -2,8 +2,10 @@
 
 ![Alt text](../../public/browser/view-browser/04/cover-picture-04.webp)
 
-<audio src="../mp3/04-导航流程：从输入URL到页面展示，这中间发生了什么？.mp3" preload="none" controls loop style="width: 100%;">
-  你的浏览器不支持 audio 标签。
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="../mp3/04-导航流程：从输入URL到页面展示，这中间发生了什么？.mp3" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../mp3/04-导航流程：从输入URL到页面展示，这中间发生了什么？.mp3">下载</a>这个音频文件</p>
 </audio>
 
 “在浏览器里，从输入 URL 到页面展示，这中间发生了什么？ ”这是一道经典的面试题，能比较全面地考察应聘者知识的掌握程度，其中涉及到了网络、操作系统、Web 等一系列的知识。所以我在面试应聘者时也必问这道题，但遗憾的是大多数人只能回答其中部分零散的知识点，并不能将这些知识点串联成线，无法系统而又全面地回答这个问题。
