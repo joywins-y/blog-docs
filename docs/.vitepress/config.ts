@@ -1,6 +1,6 @@
 import { defineConfig, defineConfigWithTheme } from "vitepress";
-import sidebar from "./sidebar";
 import { markdownConfig } from "./plugins/markdown-plugin";
+import sidebar from "./sidebar";
 import navbar from "./navbar";
 
 // https://vitepress.dev/reference/site-config
