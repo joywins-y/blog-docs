@@ -28,6 +28,8 @@
 
 ![编译器和解释器“翻译”代码](../../public/browser/how-v8-works/14/image.png "编译器和解释器“翻译”代码")
 
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">编译器和解释器“翻译”代码</div>
+
 从图中你可以看出这二者的执行流程，大致可阐述为如下：
 
 1. 在编译型语言的编译过程中，编译器首先会依次对源代码进行词法分析、语法分析，生成抽象语法树（AST），然后是优化代码，最后再生成处理器能够理解的机器码。如果编译成功，将会生成一个可执行的文件。但如果编译过程发生了语法或者其他的错误，那么编译器就会抛出异常，最后的二进制文件也不会生成成功。
@@ -39,6 +41,8 @@
 通过上面的介绍，相信你已经了解编译器和解释器了。那接下来，我们就重点分析下 V8 是如何执行一段 JavaScript 代码的。你可以先来“一览全局”，参考下图：
 
 ![V8 执行一段代码流程图](../../public/browser/how-v8-works/14/image-1.png "V8 执行一段代码流程图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">V8 执行一段代码流程图</div>
 
 从图中可以清楚地看到，V8 在执行过程中既有**解释器 Ignition**，又有**编译器 TurboFan**，那么它们是如何配合去执行一段 JavaScript 代码的呢? 下面我们就按照上图来一一分解其执行流程。
 
@@ -65,6 +69,8 @@ foo();
 
 ![抽象语法树（AST）结构](../../public/browser/how-v8-works/14/image-2.png "抽象语法树（AST）结构")
 
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">抽象语法树（AST）结构</div>
+
 从图中可以看出，AST 的结构和代码的结构非常相似，其实你也可以把 AST 看成代码的结构化的表示，编译器或者解释器后续的工作都需要依赖于 AST，而不是源代码。
 
 AST 是非常重要的一种数据结构，在很多项目中有着广泛的应用。其中最著名的一个项目是 Babel。Babel 是一个被广泛使用的代码转码器，可以将 ES6 代码转为 ES5 代码，这意味着你可以现在就用 ES6 编写程序，而不用担心现有环境是否支持 ES6。Babel 的工作原理就是先将 ES6 源码转换为 AST，然后再将 ES6 语法的 AST 转换为 ES5 语法的 AST，最后利用 ES5 的 AST 生成 JavaScript 源代码。
@@ -76,6 +82,8 @@ AST 是非常重要的一种数据结构，在很多项目中有着广泛的应�
 **第一阶段是分词（tokenize），又称为词法分析**，其作用是将一行行的源码拆解成一个个 token。所谓 **token，指的是语法上不可能再分的、最小的单个字符或字符串。你可以参考下图来更好地理解什么** token。
 
 ![分解 token 示意图](../../public/browser/how-v8-works/14/image-3.png "分解 token 示意图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">分解 token 示意图</div>
 
 从图中可以看出，通过 var myName = “极客时间”简单地定义了一个变量，其中关键字“var”、标识符“myName” 、赋值运算符“=”、字符串“极客时间”四个都是 token，而且它们代表的属性还不一样。
 **第二阶段是解析（parse），又称为语法分析**，其作用是将上一步生成的 token 数据，根据语法规则转为 AST。如果源码符合语法规则，这一步就会顺利完成。但如果源码存在语法错误，这一步就会终止，并抛出一个“语法错误”。
@@ -98,6 +106,8 @@ AST 是非常重要的一种数据结构，在很多项目中有着广泛的应�
 
 ![字节码和机器码占用空间对比](../../public/browser/how-v8-works/14/image-4.png "字节码和机器码占用空间对比")
 
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">字节码和机器码占用空间对比</div>
+
 从图中可以看出，机器码所占用的空间远远超过了字节码，所以使用字节码可以减少系统的内存使用。
 
 ### 3. 执行代码
@@ -115,6 +125,8 @@ V8 的解释器和编译器的取名也很有意思。解释器 Ignition 是点�
 这么多语言的工作引擎都使用了“字节码 +JIT”技术，因此理解 JIT 这套工作机制还是很有必要的。你可以结合下图看看 JIT 的工作过程：
 
 ![即时编译（JIT）技术](../../public/browser/how-v8-works/14/image-5.png "即时编译（JIT）技术")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">即时编译（JIT）技术</div>
 
 ## JavaScript 的性能优化
 
