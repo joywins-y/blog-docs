@@ -80,6 +80,42 @@ This is a dangerous warning.
 This is a details block.
 :::
 
+## Audio
+
+**Input**
+
+```md
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="src" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="src">下载</a>这个音频文件</p>
+</audio>
+```
+
+**Output**
+
+<audio preload="none" controls loop style="width: 100%;">
+  <source src="src" type="audio/mpeg">
+  <!-- 如果浏览器不支持，则会呈现下面内容 -->
+  <p>你的浏览器不支持HTML5音频，你可以<a href="src">下载</a>这个音频文件</p>
+</audio>
+
+## Video
+
+**Input**
+
+```md
+<video id="video" controls preload="none" poster="image.png" width="100%">
+    <source id="mp4" src="https://player.vimeo.com/progressive_redirect/playback/841374954/rendition/360p/file.mp4?loc=external&oauth2_token_id=57447761&signature=0f1da42c87a5ecd1f15ec24cac5d938d62bc64b308608ad37d784b4eb75fe9cc" type="video/mp4">
+</video>
+```
+
+**Output**
+
+<video id="video" controls preload="none" poster="image.png" width="100%">
+    <source id="mp4" src="https://player.vimeo.com/progressive_redirect/playback/841374954/rendition/360p/file.mp4?loc=external&oauth2_token_id=57447761&signature=0f1da42c87a5ecd1f15ec24cac5d938d62bc64b308608ad37d784b4eb75fe9cc" type="video/mp4">
+</video>
+
 ## More and More
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
