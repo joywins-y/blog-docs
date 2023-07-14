@@ -6,6 +6,9 @@ hero:
   name: "My Blog Docs"
   text: "A VitePress Site"
   tagline: My great project tagline
+  image: 
+    src: /home.png
+    alt: home image
   actions:
     - theme: brand
       text: 现在开始

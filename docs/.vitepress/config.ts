@@ -45,7 +45,7 @@ export default defineConfig({
     },
 
     // 表示docs/public/logo.png
-    logo: "/logo.png",
+    logo: "/logo2.png",
 
     // 开启搜索 参考：https://vitepress.dev/reference/default-theme-search#search
     search: {
