@@ -85,11 +85,11 @@ export default [
             link: "/browser/浏览器中的页面循环系统 (6讲)/15 | 消息队列和事件循环：页面是怎么“活”起来的？",
           },
           {
-            text: "16 WebAPI",
+            text: "16 WebAPI-setTimeout",
             link: "/browser/浏览器中的页面循环系统 (6讲)/16 | WebAPI：setTimeout是如何实现的？",
           },
           {
-            text: "17 WebAPI",
+            text: "17 WebAPI-XMLHttpRequest",
             link: "/browser/浏览器中的页面循环系统 (6讲)/17 | WebAPI：XMLHttpRequest是怎么实现的？",
           },
           {
