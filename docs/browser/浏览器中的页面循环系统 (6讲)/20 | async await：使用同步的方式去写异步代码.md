@@ -93,7 +93,9 @@ console.log("main 4");
 
 为了让你更好地理解协程是怎么执行的，我结合上面那段代码的执行过程，画出了下面的“协程执行流程图”，你可以对照着代码来分析：
 
-![协程执行流程图](image-3.png "协程执行流程图")
+![协程执行流程图](../../public/browser/page-cycle-system/20/image-3.png "协程执行流程图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">协程执行流程图</div>
 
 从图中可以看出来协程的四点规则：
 
@@ -115,7 +117,9 @@ console.log("main 4");
 
 为了直观理解父协程和 gen 协程是如何切换调用栈的，你可以参考下图：
 
-![gen 协程和父协程之间的切换](image-4.png "gen 协程和父协程之间的切换")
+![gen 协程和父协程之间的切换](../../public/browser/page-cycle-system/20/image-4.png "gen 协程和父协程之间的切换")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">gen 协程和父协程之间的切换</div>
 
 到这里相信你已经弄清楚了协程是怎么工作的，其实在 JavaScript 中，生成器就是协程的一种实现方式，这样相信你也就理解什么是生成器了。那么接下来，我们使用生成器和 Promise 来改造开头的那段 Promise 代码。改造后的代码如下所示：
 
@@ -217,7 +221,9 @@ console.log(3);
 
 观察上面这段代码，你能判断出打印出来的内容是什么吗？这得先来分析 async 结合 await 到底会发生什么。在详细介绍之前，我们先站在协程的视角来看看这段代码的整体执行流程图：
 
-![async/await 执行流程图](image-5.png "async/await 执行流程图")
+![async/await 执行流程图](../../public/browser/page-cycle-system/20/image-5.png "async/await 执行流程图")
+
+<div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">async/await 执行流程图</div>
 
 结合上图，我们来一起分析下 async/await 的执行流程。
 
