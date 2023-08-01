@@ -1,6 +1,6 @@
 # 02 | TCP 协议：如何保证页面文件能被完整送达浏览器？
 
-![Alt text](../../public/browser/view-browser/02/cover-picture-02.png)
+![Alt text](../../public/browser/view-browser/02/cover-picture-02.webp)
 
 <audio preload="none" controls loop style="width: 100%;">
   <source src="../mp3/02-TCP协议：如何保证页面文件能被完整送达浏览器？.mp3" type="audio/mpeg">
