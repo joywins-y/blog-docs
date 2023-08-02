@@ -1,6 +1,6 @@
 # 加餐二｜任务调度：有了 setTimeOut，为什么还要使用 rAF？
 
-![Alt text](image-8.png)
+![Alt text](../../public/browser/snacks/snack-2/image-8.png)
 
 你好，我是李兵。
 
@@ -20,13 +20,13 @@
 
 在最初，采用这种方式没有太大的问题，因为页面中的任务还不算太多，渲染主线程也不是太繁忙。不过浏览器是向前不停进化的，其进化路线体现在架构的调整、功能的增加以及更加精细的优化策略等方面，这些变化让渲染进程所需要处理的任务变多了，对应的渲染进程的主线程也变得越拥挤。下图所展示的仅仅是部分运行在主线程上的任务，你可以参考下：
 
-![任务和消息队列](image-9.png "任务和消息队列")
+![任务和消息队列](../../public/browser/snacks/snack-2/image-9.png "任务和消息队列")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">任务和消息队列</div>
 
 你可以试想一下，在基于这种单消息队列的架构下，如果用户发出一个点击事件或者缩放页面的事件，而在此时，该任务前面可能还有很多不太重要的任务在排队等待着被执行，诸如 V8 的垃圾回收、DOM 定时器等任务，如果执行这些任务需要花费的时间过久的话，那么就会让用户产生卡顿的感觉。你可以参看下图：
 
-![队头阻塞问题](image-10.png "队头阻塞问题")
+![队头阻塞问题](../../public/browser/snacks/snack-2/image-10.png "队头阻塞问题")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">队头阻塞问题</div>
 
@@ -48,7 +48,7 @@
 
 这些任务被触发后，用户想立即得到页面的反馈，所以我们需要让这些任务能够优先与其他的任务执行。要实现这种效果，我们可以增加一个高优级的消息队列，将高优先级的任务都添加到这个队列里面，然后优先执行该消息队列中的任务。最终效果如下图所示:
 
-![引入高优先级的消息队列](image-11.png "引入高优先级的消息队列")
+![引入高优先级的消息队列](../../public/browser/snacks/snack-2/image-11.png "引入高优先级的消息队列")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">引入高优先级的消息队列</div>
 
@@ -56,7 +56,7 @@
 
 我们还可以更进一步，将任务划分为多个不同的优先级，来实现更加细粒度的任务调度，比如可以划分为高优先级，普通优先级和低优先级，最终效果如下图所示：
 
-![增加多个不同优先级的消息队列](image-12.png "增加多个不同优先级的消息队列")
+![增加多个不同优先级的消息队列](../../public/browser/snacks/snack-2/image-12.png "增加多个不同优先级的消息队列")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">增加多个不同优先级的消息队列</div>
 
@@ -80,7 +80,7 @@
 
 最终实现效果如下图所示：
 
-![根据消息类型实现不同优先级的消息队列](image-13.png "根据消息类型实现不同优先级的消息队列")
+![根据消息类型实现不同优先级的消息队列](../../public/browser/snacks/snack-2/image-13.png "根据消息类型实现不同优先级的消息队列")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">根据消息类型实现不同优先级的消息队列</div>
 
@@ -96,7 +96,7 @@
 
 所以我们还得根据实际场景来继续平衡这个跷跷板，也就是说在不同的场景下，根据实际情况，动态调整消息队列的优先级。一图胜过千言，我们先看下图：
 
-![动态调度策略](image-14.png "动态调度策略")
+![动态调度策略](../../public/browser/snacks/snack-2/image-14.png "动态调度策略")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">动态调度策略</div>
 
@@ -116,7 +116,7 @@
 
 这时候我们会发现，显示器从前缓冲区读取图片，和浏览器生成新的图像到后缓冲区的过程是不同步的，如下图所示：
 
-![VSync 时钟周期和渲染引擎生成图片不同步问题](image-15.png "VSync 时钟周期和渲染引擎生成图片不同步问题")
+![VSync 时钟周期和渲染引擎生成图片不同步问题](../../public/browser/snacks/snack-2/image-15.png "VSync 时钟周期和渲染引擎生成图片不同步问题")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">VSync 时钟周期和渲染引擎生成图片不同步问题</div>
 
@@ -136,7 +136,7 @@
 
 具体地讲，当 GPU 接收到 VSync 信号后，会将 VSync 信号同步给浏览器进程，浏览器进程再将其同步到对应的渲染进程，渲染进程接收到 VSync 信号之后，就可以准备绘制新的一帧了，具体流程你可以参考下图：
 
-![绑定 VSync 时钟同步周期和浏览器生成页面周期](image-16.png "绑定 VSync 时钟同步周期和浏览器生成页面周期")
+![绑定 VSync 时钟同步周期和浏览器生成页面周期](../../public/browser/snacks/snack-2/image-16.png "绑定 VSync 时钟同步周期和浏览器生成页面周期")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">绑定 VSync 时钟同步周期和浏览器生成页面周期</div>
 

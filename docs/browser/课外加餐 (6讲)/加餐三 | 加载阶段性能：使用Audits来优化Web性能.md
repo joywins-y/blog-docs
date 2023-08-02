@@ -1,6 +1,6 @@
 # 加餐三｜加载阶段性能：使用 Audits 来优化 Web 性能
 
-![Alt text](image-17.png)
+![Alt text](../../public/browser/snacks/snack-3/image-17.png)
 
 你好，我是李兵。
 
@@ -48,7 +48,7 @@ Perfomance 能让我们看到更多细节数据，但是更加复杂，Audits �
 
 最终打开的页面如下图所示：
 
-![Audits 界面](image-18.png "Audits 界面")
+![Audits 界面](../../public/browser/snacks/snack-3/image-18.png "Audits 界面")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">Audits 界面</div>
 
@@ -76,7 +76,7 @@ Perfomance 能让我们看到更多细节数据，但是更加复杂，Audits �
 
 点击生成报告的按钮之后，我们大约需要等待一分钟左右，Audits 就可以生成最终的分析报告了，如下图所示：
 
-![生成的报告图](image-19.png "生成的报告图")
+![生成的报告图](../../public/browser/snacks/snack-3/image-19.png "生成的报告图")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">生成的报告图</div>
 
@@ -88,7 +88,7 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 报告的第一个部分是**性能指标 (Metrics)**，如下图所示：
 
-![性能指标](image-20.png "性能指标")
+![性能指标](../../public/browser/snacks/snack-3/image-20.png "性能指标")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">性能指标</div>
 
@@ -96,7 +96,7 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 报告的第二个部分是**可优化项 (Opportunities)**，如下图所示：
 
-![可优化项 (Opportunities)](image-21.png "可优化项 (Opportunities)")
+![可优化项 (Opportunities)](../../public/browser/snacks/snack-3/image-21.png "可优化项 (Opportunities)")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">可优化项 (Opportunities)</div>
 
@@ -104,7 +104,7 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 报告的第三部分是**手动诊断 (Diagnostics)**，如下图所示：
 
-![手动诊断 (Diagnostics)](image-21.png "手动诊断 (Diagnostics)")
+![手动诊断 (Diagnostics)](../../public/browser/snacks/snack-3/image-21.png "手动诊断 (Diagnostics)")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">手动诊断 (Diagnostics)</div>
 
@@ -112,7 +112,7 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 报告的最后一部分是**运行时设置 (Runtime Settings)**，如下图所示：
 
-![运行时设置 (Runtime Settings)](image-22.png "运行时设置 (Runtime Settings)")
+![运行时设置 (Runtime Settings)](../../public/browser/snacks/snack-3/image-22.png "运行时设置 (Runtime Settings)")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">运行时设置 (Runtime Settings)</div>
 
@@ -131,7 +131,7 @@ Audits 除了生成性能指标以外，还会分析该站点并提供了很多�
 
 那么接下来我会逐一分析六项指标的含义，并讨论如何提升这六项指标的数值。这六项都是页面在加载过程中的性能指标，所以要弄明白这六项指标的具体含义，我们还得结合页面的加载过程来分析。一图胜过千言，我们还是先看下面这张页面从加载到展示的过程图：
 
-![页面加载过程](image-23.png "页面加载过程")
+![页面加载过程](../../public/browser/snacks/snack-3/image-23.png "页面加载过程")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">页面加载过程</div>
 

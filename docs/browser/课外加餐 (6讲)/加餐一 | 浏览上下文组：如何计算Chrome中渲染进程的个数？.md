@@ -1,6 +1,6 @@
 # 加餐一｜浏览上下文组：如何计算 Chrome 中渲染进程的个数？
 
-![Alt text](image.png)
+![Alt text](../../public/browser/snacks/snack-1/image.png)
 
 你好，我是李兵。
 在留言区，经常有朋友问到如何计算 Chrome 中渲染进程个数的问题，那么今天我就来完整地解答这个问题。
@@ -9,7 +9,7 @@
 
 具体地讲，如果我从极客邦 (www.geekbang.org) 的标签页中打开新的极客时间 (time.geekbang.org) 标签页，由于这两个标签页属于同一站点 (相同协议、相同根域名)，所以他们会共用同一个渲染进程。你可以看下面这张 Chrome 的任务管理器截图：
 
-![多个标签页运行在同一个渲染进程](image-1.png "多个标签页运行在同一个渲染进程")
+![多个标签页运行在同一个渲染进程](../../public/browser/snacks/snack-1/image-1.png "多个标签页运行在同一个渲染进程")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">多个标签页运行在同一个渲染进程</div>
 
@@ -17,7 +17,7 @@
 
 不过如果我们分别打开这两个标签页，比如先打开极客邦的标签页，然后再新建一个标签页，再在这个新标签页中打开极客时间，这时候我们可以看到这两个标签页分别使用了两个不同的渲染进程。你可以参看下图：
 
-![多个标签页运行在不同的渲染进程中](image-2.png "多个标签页运行在不同的渲染进程中")
+![多个标签页运行在不同的渲染进程中](../../public/browser/snacks/snack-1/image-2.png "多个标签页运行在不同的渲染进程中")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">多个标签页运行在不同的渲染进程中</div>
 
@@ -61,7 +61,7 @@ new_window = window.open("http://time.geekbang.org");
 
 而第二种情况就简单多了，因为第二个标签页中并没有第一个标签页中的任何信息，第一个标签页也不包含任何第二个标签页中的信息，所以他们不属于同一个浏览上下文组，因此即便他们属于同一站点，也不会运行在同一个渲染进程之中。下面是我画的计算标签页的流程图，你可以参考下：
 
-![计算标签页使用的渲染进程数目](image-3.png "计算标签页使用的渲染进程数目")
+![计算标签页使用的渲染进程数目](../../public/browser/snacks/snack-1/image-3.png "计算标签页使用的渲染进程数目")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">计算标签页使用的渲染进程数目</div>
 
@@ -82,7 +82,7 @@ new_window = window.open("http://time.geekbang.org");
 
 我们先来复现下“芳华年月”所描述的现象，首先打开 linkmarket.aliyun.com 这个标签页，再在这个标签页中随便点击两个链接，然后就打开了两个新的标签页了，如下图所示：
 
-![“例外”情况](image-4.png "“例外”情况")
+![“例外”情况](../../public/browser/snacks/snack-1/image-4.png "“例外”情况")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">“例外”情况</div>
 
@@ -100,7 +100,7 @@ new_window = window.open("http://time.geekbang.org");
 
 我们可以看看实现链接的 HTML 文件，如下图所示：
 
-![链接使用了 rel = noopener](image-5.png "链接使用了 rel = noopener")
+![链接使用了 rel = noopener](../../public/browser/snacks/snack-1/image-5.png "链接使用了 rel = noopener")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">链接使用了 rel = noopener</div>
 
@@ -137,13 +137,13 @@ new_window = window.open("http://time.geekbang.org");
 
 在 Chrome 浏览器中打开上面这个标签页，然后观察 Chrome 的任务管理，我们会发现这个标签页使用了四个渲染进程，如下图所示：
 
-![iframe 使用单独的渲染进程](image-6.png "iframe 使用单独的渲染进程")
+![iframe 使用单独的渲染进程](../../public/browser/snacks/snack-1/image-6.png "iframe 使用单独的渲染进程")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">iframe 使用单独的渲染进程</div>
 
 结合上图和 HTML 代码，我们可以发现，由于 InfoQ、极客邦两个 iframe 与父标签页不属于同一站点，所以它们会被分配到不同的渲染进程中，而 iframe.html 和源标签页属于同一站点，所以它会和源标签页运行在同一个渲染进程中。下面是我画的计算 iframe 使用渲染进程数目的流程图，你可以对照着参考下：
 
-![计算 iframe 所使用的渲染进程数目](image-7.png "计算 iframe 所使用的渲染进程数目")
+![计算 iframe 所使用的渲染进程数目](../../public/browser/snacks/snack-1/image-7.png "计算 iframe 所使用的渲染进程数目")
 
 <div style="text-align: center; font-size: 12px; color: #999; margin-bottom: 8px;">计算 iframe 所使用的渲染进程数目</div>
 
