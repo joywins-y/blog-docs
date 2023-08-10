@@ -1,4 +1,4 @@
-26 | 虚拟DOM：虚拟DOM和实际的DOM有何不同？
+# 26 | 虚拟DOM：虚拟DOM和实际的DOM有何不同？
 
 ![Alt text](../../public/browser/page-in-browser/26/cover-picture-26.webp)
 
