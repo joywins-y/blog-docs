@@ -1,65 +1,57 @@
-# name: Deploy
-# on:
-#     workflow_dispatch: {}
-#     push:
-#         branches:
-#             - main
-# jobs:
-#     deploy:
-#         runs-on: ubuntn-latest
-#         permissions:
-#             pages: write
-#             id-token: write
-#         environment:
-#             name: github-pages
-#             url: ${{ steps.deployment.outputs.page_url }}
-#         steps:
-#             - uses: actions/checkout@3
-#               with:
-#                 fetch-depth: 0
-#             - uses: actions/setup-node@3
-#               with:
-#                 node-version: 16
-#                 cache: npm
-#             - run: npm cli
-#             - name: Build
-#               run: npm run docs:build
-#             - uses: actions/configure-pages@v2
-#             - uses: actions/upload-pages-artifact@v1
-#               with:
-#                 path: docs/.vitepress/dist
-#             - name: Deploy
-#               id: deployment
-#               uses: actions/deploy-pages@v1
-
-#!/usr/bin/env sh
 name: Deploy
-
 on:
+  # 代码 push 的时候触发
   push:
-    branches:
-      - main
-
+    # main 分支的时候触发
+    branches: main
 jobs:
-  deploy:
+  # 定义一个 job, 名字为 Deploy
+  Deploy:
+    # 使用 GitHub 提供给我们的机器去跑
     runs-on: ubuntu-latest
+    # 步骤
     steps:
-      - uses: actions/checkout@v3
+      # 拉取最新的代码
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # 安装 node 环境
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
+          node-version: "16.x"
+      # 为 node_modules 设置缓存
+      - name: Cache
+        # 缓存命中结果会存储在steps.[id].outputs.cache-hit里，该变量在继后的step中可读
+        id: cache-dependencies
+        uses: actions/cache@v3
         with:
-          node-version: 16
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-
+          # 缓存文件目录的路径
+          path: |
+            **/node_modules
+          key: ${{runner.OS}}
+      # 安装依赖
+      - name: Installing Dependencies
+        # 如果命中缓存，就不需要安装依赖，使用缓存即可
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm install
+      # 打包
       - name: Build
-        run: pnpm docs:build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
-          deploy_key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-          publish_dir: docs/.vitepress/dist
-          allow_empty_commit: true
+        run: |
+          npm run docs:build
+          zip -r vuepress ./vuepress/**
+      # 产物上传服务器
+      # - name: Upload to Deploy Server
+      #   uses: easingthemes/ssh-deploy@v2.0.7
+      #   env:
+      #     # 免密登录的秘钥
+      #     SSH_PRIVATE_KEY: ${{ secrets.D_PASS }}
+      #     # 服务器登录用户名
+      #     REMOTE_USER: ${{ secrets.D_USER }}
+      #     # 服务器的公网IP
+      #     REMOTE_HOST: ${{ secrets.D_HOST }}
+      #     # 你打包后产物的文件夹
+      #     SOURCE: "vuepress/"
+      #     # 先清空目标目录
+      #     ARGS: "-avzr --delete"
+      #     # 上传到服务器目标目录
+      #     TARGET: "/www/vuepress"

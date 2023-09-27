@@ -53,6 +53,7 @@ router.get('/', function(req, res, next) {
  res.render('index', { title: 'Express',xss:req.query.xss });
 });
 module.exports = router;
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,10 +68,11 @@ module.exports = router;
  </div>
 </body>
 </html>
+```
 上面这两段代码，第一段是路由，第二段是视图，作用是将 URL 中 xss 参数的内容显示在页面。我们可以在本地演示下，比如打开http://localhost:3000/?xss=123这个链接，这样在页面中展示就是“123”了（如下图），是正常的，没有问题的。
 
 正常打开页面
-但当打开http://localhost:3000/?xss=<script>alert('你被xss攻击了')</script>这段 URL 时，其结果如下图所示：
+但当打开`http://localhost:3000/?xss=<script>alert('你被xss攻击了')</script>`这段 URL 时，其结果如下图所示：
 
 反射型 XSS 攻击
 通过这个操作，我们会发现用户将一段含有恶意代码的请求提交给 Web 服务器，Web 服务器接收到请求时，又将恶意代码反射给了浏览器端，这就是反射型 XSS 攻击。在现实生活中，黑客经常会通过 QQ 群或者邮件等渠道诱导用户去点击这些恶意链接，所以对于一些链接我们一定要慎之又慎。
@@ -84,13 +86,13 @@ module.exports = router;
 接下来我们就来看看一些常用的阻止 XSS 攻击的策略。
 1. 服务器对输入脚本进行过滤或转码
 不管是反射型还是存储型 XSS 攻击，我们都可以在服务器端将一些关键的字符进行转码，比如最典型的：
-code:<script>alert('你被xss攻击了')</script>
+code:`<script>alert('你被xss攻击了')</script>`
 这段代码过滤后，只留下了：
 code:
-这样，当用户再次请求该页面时，由于<script>标签的内容都被过滤了，所以这段脚本在客户端是不可能被执行的。
+这样，当用户再次请求该页面时，由于`<script>`标签的内容都被过滤了，所以这段脚本在客户端是不可能被执行的。
 除了过滤之外，服务器还可以对这些内容进行转码，还是上面那段代码，经过转码之后，效果如下所示：
 code:&lt;script&gt;alert(&#39;你被xss攻击了&#39;)&lt;/script&gt;
-经过转码之后的内容，如<script>标签被转换为&lt;script&gt;，因此即使这段脚本返回给页面，页面也不会执行这段脚本。
+经过转码之后的内容，如`<script>`标签被转换为&lt;script&gt;，因此即使这段脚本返回给页面，页面也不会执行这段脚本。
 2. 充分利用 CSP
 虽然在服务器端执行过滤或者转码可以阻止 XSS 攻击的发生，但完全依靠服务器端依然是不够的，我们还需要把 CSP 等策略充分地利用起来，以降低 XSS 攻击带来的风险和后果。
 实施严格的 CSP 可以有效地防范 XSS 攻击，具体来讲 CSP 有如下几个功能：
@@ -206,7 +208,7 @@ LEON
 
 kelinlawu
 2022-09-10 来自四川
-<script>alert('你被xss攻击了')</script>
+`<script>alert('你被xss攻击了')</script>`
 
 FECoding
 2022-08-02 来自北京

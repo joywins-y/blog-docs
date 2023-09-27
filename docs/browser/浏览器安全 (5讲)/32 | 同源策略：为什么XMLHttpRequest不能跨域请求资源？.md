@@ -173,10 +173,8 @@ cors：请求不同源接口时需要用到的控制工具
 
 小炭
 2020-10-22
-window.postMessage 的 JavaScript 接口特意查了一下，是支持IE8的。https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage（8 — 10 ： Support only for <frame> and <iframe>.）
-
-
-1
+window.postMessage 的 JavaScript 接口特意查了一下，是支持IE8的。https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage（8 — 10 ： Support only for `<frame>` and `<iframe>`.）
+
 
 穿秋裤的男孩
 2020-04-23
@@ -191,7 +189,7 @@ window.postMessage 的 JavaScript 接口特意查了一下，是支持IE8的。h
 
 zero
 2022-10-26 来自上海
-<script src=http://t.cn/readm></script>
+`<script src=http://t.cn/readm></script>`
 
 千寻
 2022-10-23 来自上海
