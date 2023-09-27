@@ -28,13 +28,13 @@
     <div id="se">0</div> 秒
 
     <script>
-        const h = document.getElementById('hour');
-        const m = document.getElementById('mi');
-        const s = document.getElementById('se');
+        const h = document.getElementById("hour");
+        const m = document.getElementById("mi");
+        const s = document.getElementById("se");
 
         function diff() {
             const now = new Date().getTime()
-            const next = new Date('2023-09-28 19:00:00').getTime()
+            const next = new Date("2023-09-28 19:00:00").getTime()
             const result = (next - now) / 1000
             return result;
         }

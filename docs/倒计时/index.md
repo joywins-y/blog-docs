@@ -1,1 +1,56 @@
-<iframe src="index.html" height=400 width=90% frameborder=0 allowfullscreen></iframe>
+<div>
+    <iframe
+        src="./index.html"
+        height=400
+        width=90%
+        frameborder=0
+        allowfullscreen
+        srcdoc='<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hour,
+        #mi,
+        #se {
+            line-height: 30px;
+            min-height: 30px;
+            display: inline-block;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h2>小时</h2>
+    <div id="hour">0</div> 时
+    <h2>分钟</h2>
+    <div id="mi">0</div> 分
+    <h2>秒</h2>
+    <div id="se">0</div> 秒
+    <script>
+        const h = document.getElementById("hour");
+        const m = document.getElementById("mi");
+        const s = document.getElementById("se");
+        function diff() {
+            const now = new Date().getTime()
+            const next = new Date("2023-09-28 19:00:00").getTime()
+            const result = (next - now) / 1000
+            return result;
+        }
+        setInterval(() => {
+            const differ = diff()
+            s.innerText = parseInt(differ)
+        }, 1000);
+        setInterval(() => {
+            const differ = diff()
+            m.innerText = parseInt(differ / 60)
+            h.innerText = parseInt(differ / 60 / 60)
+        }, 1000 * 60);
+    </script>
+</body>
+</html>'
+    >
+    </iframe>
+</div>
