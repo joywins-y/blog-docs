@@ -19,6 +19,12 @@ export default [
     ],
   },
   {
+    text: "倒计时",
+    items: [
+        { text: "倒计时", link: "/倒计时/index" },
+      ],
+  },
+  {
     text: "Regular",
     items: [
       { text: "格式化银行卡号", link: "/regular/format-bank-card-number" },
