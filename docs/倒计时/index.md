@@ -29,7 +29,7 @@
     <div id="mi">0</div> 分
     <h2>秒</h2>
     <div id="se">0</div> 秒
-    <h1>秒</h1>
+    <h1></h1>
     <div id="time">0</div>
     <script>
         const h = document.getElementById("hour");
