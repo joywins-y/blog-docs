@@ -41,6 +41,7 @@
 
         .time li:nth-child(2n) {
             flex: 1;
+            color: #3b3d3b;
         }
 
         .time li:nth-child(2n+1) {
@@ -84,12 +85,164 @@
         .change {
             border-bottom: 2px solid white;
         }
+
+        .countdown {
+            width: 400px;
+            height: 150px;
+            margin: 50px auto;
+            position: relative;
+            color: #fff;
+        }
+
+        .days,
+        .minutes,
+        .seconds {
+            display: flex;
+            flex: 1;
+            font-size: 80px;
+            text-align: center;
+            line-height: 150px;
+            padding: 0 10px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .days li:nth-child(2n),
+        .minutes li:nth-child(2n),
+        .seconds li:nth-child(2n) {
+            flex: 1;
+            color: #3b3d3b;
+        }
+
+        .days li:nth-child(2n+1),
+        .minutes li:nth-child(2n+1),
+        .seconds li:nth-child(2n+1) {
+            flex: 4;
+            background-color: #3b3d3b;
+            position: relative;
+            height: 100px;
+            line-height: 100px;
+            margin: auto 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 3px white;
+        }
+
+        .days li:nth-child(2n+1) .upBox,
+        .days li:nth-child(2n+1) .downBox,
+        .minutes li:nth-child(2n+1) .upBox,
+        .minutes li:nth-child(2n+1) .downBox,
+        .seconds li:nth-child(2n+1) .upBox,
+        .seconds li:nth-child(2n+1) .downBox {
+            position: absolute;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        .days li:nth-child(2n+1) .upBox,
+        .minutes li:nth-child(2n+1) .upBox,
+        .seconds li:nth-child(2n+1) .upBox {
+            top: 0;
+            bottom: 50%;
+            box-sizing: border-box;
+            border-bottom: solid 3px #3b3d3b;
+            background-color: #3b3d3b;
+            transform-origin: bottom;
+        }
+
+        .days li:nth-child(2n+1) .downBox,
+        .minutes li:nth-child(2n+1) .downBox,
+        .seconds li:nth-child(2n+1) .downBox {
+            top: 50%;
+            bottom: 0;
+            line-height: 0;
+            box-sizing: border-box;
+            background-color: #3b3d3b;
+            overflow: hidden;
+            transform-origin: top;
+        }
     </style>
 </head>
 
 <body>
     <div class="show">
         <ul class="time">
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+        </ul>
+    </div>
+    倒计时
+    <div class="countdown">
+        <ul class="days">
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="countdown">
+        <ul class="minutes">
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+            <li>:</li>
+            <li>
+                <div class="upBox beforeTime"></div>
+                <div class="downBox beforeTime"></div>
+                <div class="upBox afterTime"></div>
+                <div class="downBox afterTime"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="countdown">
+        <ul class="seconds">
             <li>
                 <div class="upBox beforeTime"></div>
                 <div class="downBox beforeTime"></div>
