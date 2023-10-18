@@ -10,6 +10,10 @@ export default [
                 text: "23-10-17",
                 link: "/interview/daily-question/23-10-17",
             },
+            {
+                text: "23-10-18",
+                link: "/interview/daily-question/23-10-18",
+            },
         ],
     },
     {
