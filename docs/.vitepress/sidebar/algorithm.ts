@@ -10,6 +10,10 @@ export default [
                 text: "2652. 倍数求和",
                 link: "/algorithm/2652.sum-multiples",
             },
+            {
+                text: "2530. 执行 K 次操作后的最大分数",
+                link: "/algorithm/2530.maximal-score-after-applying-k-operations",
+            },
         ],
     },
 ];
