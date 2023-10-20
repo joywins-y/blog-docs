@@ -11,6 +11,10 @@ export default [
                 link: "/algorithm/1726.tuple-with-same-product",
             },
             {
+                text: "2525. 根据规则将箱子分类",
+                link: "/algorithm/2525.categorize-box-according-to-criteria",
+            },
+            {
                 text: "2530. 执行 K 次操作后的最大分数",
                 link: "/algorithm/2530.maximal-score-after-applying-k-operations",
             },
