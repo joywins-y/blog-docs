@@ -22,6 +22,10 @@ export default [
                 text: "2652. 倍数求和",
                 link: "/algorithm/2652.sum-multiples",
             },
+            {
+                text: "2678. 老人的数目",
+                link: "/algorithm/2678.number-of-senior-citizens",
+            },
         ],
     },
 ];
