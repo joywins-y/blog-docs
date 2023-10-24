@@ -7,6 +7,10 @@ export default [
                 link: "/algorithm/260.single-number-iii",
             },
             {
+                text: "1155. 掷骰子等于目标和的方法数",
+                link: "/algorithm/1155.number-of-dice-rolls-with-target-sum",
+            },
+            {
                 text: "1726. 同积元组",
                 link: "/algorithm/1726.tuple-with-same-product",
             },
