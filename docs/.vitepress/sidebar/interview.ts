@@ -34,6 +34,14 @@ export default [
                 text: "23-10-24",
                 link: "/interview/daily-question/23-10-24",
             },
+            {
+                text: "23-10-25",
+                link: "/interview/daily-question/23-10-25",
+            },
+            {
+                text: "23-10-26",
+                link: "/interview/daily-question/23-10-26",
+            },
         ],
     },
     {

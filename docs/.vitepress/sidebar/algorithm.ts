@@ -15,6 +15,10 @@ export default [
                 link: "/algorithm/1726.tuple-with-same-product",
             },
             {
+                text: "2520. 统计能整除数字的位数",
+                link: "/algorithm/2520.count-the-digits-that-divide-a-number",
+            },
+            {
                 text: "2525. 根据规则将箱子分类",
                 link: "/algorithm/2525.categorize-box-according-to-criteria",
             },
@@ -29,6 +33,10 @@ export default [
             {
                 text: "2678. 老人的数目",
                 link: "/algorithm/2678.number-of-senior-citizens",
+            },
+            {
+                text: "2698. 求一个整数的惩罚数",
+                link: "/algorithm/2698.find-the-punishment-number-of-an-integer",
             },
         ],
     },
