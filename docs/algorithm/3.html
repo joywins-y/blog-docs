@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 300px;
+            background: #CBE8DD;
+            margin-top: 350px;
+            margin-left: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #CBE8DD;
+        } */
+
+        .triangle1,
+        .triangle2,
+        .triangle3 {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: 0;
+            margin: 120px 70px;
+            border-left: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 100px solid #007192;
+        }
+
+        .triangle1 {
+            margin: 80px auto;
+            border-bottom-color: #007192;
+            border-left-width: 105px;
+            border-right-width: 105px;
+            border-bottom-width: 130px;
+        }
+
+        .triangle2 {
+            left: 0;
+        }
+
+        .triangle3 {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="triangle1"></div>
+        <div class="triangle2"></div>
+        <div class="triangle3"></div>
+    </div>
+</body>
+
+</html>
