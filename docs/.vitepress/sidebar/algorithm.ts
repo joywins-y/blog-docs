@@ -31,6 +31,10 @@ export default [
                 link: "/algorithm/2530.maximal-score-after-applying-k-operations",
             },
             {
+                text: "2575. 找出字符串的可整除数组",
+                link: "/algorithm/2575.find-the-divisibility-array-of-a-string",
+            },
+            {
                 text: "2652. 倍数求和",
                 link: "/algorithm/2652.sum-multiples",
             },
@@ -41,6 +45,10 @@ export default [
             {
                 text: "2698. 求一个整数的惩罚数",
                 link: "/algorithm/2698.find-the-punishment-number-of-an-integer",
+            },
+            {
+                text: "2834. 找出美丽数组的最小和",
+                link: "/algorithm/2834.find-the-minimum-possible-sum-of-a-beautiful-array",
             },
         ],
     },
