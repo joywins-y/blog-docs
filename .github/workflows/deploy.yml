@@ -39,6 +39,14 @@ jobs:
         run: |
           npm run docs:build
           zip -r vuepress ./vuepress/**
+      # 部署到 GitHub Pages  
+      - name: Deploy to GitHub Pages  
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'  
+        uses: JamesIves/github-pages-deploy-action@v4.3.0  
+        with:  
+          branch: gh-pages # 要部署到的分支  
+          folder: vuepress # 构建产物的文件夹  
+          clean: true # 清除 gh-pages 分支上的旧文件
       # 产物上传服务器
       # - name: Upload to Deploy Server
       #   uses: easingthemes/ssh-deploy@v2.0.7

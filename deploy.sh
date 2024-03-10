@@ -16,11 +16,14 @@ git init
 git add -A
 git commit -m 'deploy'
 
+# Create and switch to the main branch  
+git branch -M main
+
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/joywins-y/blog-docs.git main:gh-pages
+git push -f git@github.com:joywins-y/blog-docs.git main:gh-pages
 
 
 
