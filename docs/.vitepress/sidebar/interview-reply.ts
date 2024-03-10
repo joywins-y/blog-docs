@@ -1,5 +1,18 @@
 export default [
     {
+        text: '面试真题汇总',
+        items: [
+            {
+                text: '汇总',
+                link: '/面试复盘/汇总',
+            },
+            {
+                text: '面试题库',
+                link: '/面试复盘/面试题库',
+            },
+        ],
+    },
+    {
         text: '面试真题',
         items: [
             {
