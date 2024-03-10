@@ -95,9 +95,9 @@ This is a details block.
 **Output**
 
 <audio preload="none" controls loop style="width: 100%;">
-  <source src="./browser/mp3/00开篇词-参透了浏览器的工作原理，你就能解决80%的前端难题.mp3" type="audio/mpeg">
+  <source src="../docs/browser/mp3/00开篇词-参透了浏览器的工作原理，你就能解决80%25的前端难题.mp3" type="audio/mpeg">
   <!-- 如果浏览器不支持，则会呈现下面内容 -->
-  <p>你的浏览器不支持HTML5音频，你可以<a href="./browser/mp3/00开篇词-参透了浏览器的工作原理，你就能解决80%的前端难题.mp3">下载</a>这个音频文件</p>
+  <p>你的浏览器不支持HTML5音频，你可以<a href="../docs/browser/mp3/00开篇词-参透了浏览器的工作原理，你就能解决80%25的前端难题.mp3">下载</a>这个音频文件</p>
 </audio>
 
 ## Video
