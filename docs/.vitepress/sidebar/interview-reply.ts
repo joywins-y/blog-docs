@@ -29,4 +29,125 @@ export default [
             },
         ],
     },
+    {
+        text: 'React 面试题',
+        items: [
+            {
+                text: 'React 面试题汇总',
+                link: '/面试复盘/React/React面试题汇总',
+            },
+            {
+                text: '前端框架的理解',
+                link: '/面试复盘/React/前端框架的理解',
+            },
+            {
+                text: 'React 和 Vue 描述页面的区别',
+                link: '/面试复盘/React/React 和 Vue 描述页面的区别',
+            },
+            {
+                text: '前端框架的分类',
+                link: '/面试复盘/React/前端框架的分类',
+            },
+            {
+                text: '虚拟 DOM',
+                link: '/面试复盘/React/虚拟 DOM',
+            },
+            {
+                text: 'React 整体架构',
+                link: '/面试复盘/React/React 整体架构',
+            },
+            {
+                text: 'React 渲染流程',
+                link: '/面试复盘/React/React 渲染流程',
+            },
+            {
+                text: 'Fiber双缓冲',
+                link: '/面试复盘/React/Fiber双缓冲',
+            },
+            {
+                text: 'MessageChannel',
+                link: '/面试复盘/React/MessageChannel',
+            },
+            {
+                text: 'Scheduler调度普通任务',
+                link: '/面试复盘/React/Scheduler调度普通任务',
+            },
+            {
+                text: 'Scheduler调度延时任务',
+                link: '/面试复盘/React/Scheduler调度延时任务',
+            },
+            {
+                text: '最小堆',
+                link: '/面试复盘/React/最小堆',
+            },
+            {
+                text: 'React中的位运算',
+                link: '/面试复盘/React/React中的位运算',
+            },
+            {
+                text: 'beginWork工作流程',
+                link: '/面试复盘/React/beginWork工作流程',
+            },
+            {
+                text: 'completeWork工作流程',
+                link: '/面试复盘/React/completeWork工作流程',
+            },
+            {
+                text: '图解diff算法',
+                link: '/面试复盘/React/图解diff算法',
+            },
+            {
+                text: 'commit 工作流程',
+                link: '/面试复盘/React/commit 工作流程',
+            },
+            {
+                text: 'lane模型',
+                link: '/面试复盘/React/lane模型',
+            },
+            {
+                text: 'React 中的事件',
+                link: '/面试复盘/React/React 中的事件',
+            },
+            {
+                text: 'Hooks原理',
+                link: '/面试复盘/React/Hooks原理',
+            },
+            {
+                text: 'useState和useReducer',
+                link: '/面试复盘/React/useState和useReducer',
+            },
+            {
+                text: 'effect相关hook',
+                link: '/面试复盘/React/effect相关hook',
+            },
+            {
+                text: 'useCallback和useMemo',
+                link: '/面试复盘/React/useCallback和useMemo',
+            },
+            {
+                text: 'useRef',
+                link: '/面试复盘/React/useRef',
+            },
+            {
+                text: 'Update',
+                link: '/面试复盘/React/Update',
+            },
+            {
+                text: '性能优化策略之eagerState',
+                link: '/面试复盘/React/性能优化策略之eagerState',
+            },
+            {
+                text: '性能优化策略之bailout',
+                link: '/面试复盘/React/性能优化策略之bailout',
+            },
+            {
+                text: 'bailout和ContextAPI',
+                link: '/面试复盘/React/bailout和ContextAPI',
+            },
+            {
+                text: '性能优化对日常开发启示',
+                link: '/面试复盘/React/性能优化对日常开发启示',
+            },
+        ],
+    },
 ];
