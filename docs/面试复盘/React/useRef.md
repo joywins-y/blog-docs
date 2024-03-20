@@ -8,7 +8,7 @@ ref 是英语 reference（引用）的缩写，在 React 中，开发者可以�
 
 -   String 类型（已不推荐使用）
 -   函数类型
--   { current : T }
+-   `{ current : T }`
 
 目前关于创建 ref，类组件推荐使用 createRef 方法，函数组件推荐使用 useRef
 
@@ -33,7 +33,7 @@ function mountRef(initialValue) {
 }
 ```
 
-在 mount 阶段，首先调用 mountWorkInProgressHook 方法得到一个 hook 对象，该 hook 对象的 memoizedState 上面会缓存一个键为 current 的对象 { current: initialValue }，之后向外部返回该对象。
+在 mount 阶段，首先调用 mountWorkInProgressHook 方法得到一个 hook 对象，该 hook 对象的 memoizedState 上面会缓存一个键为 current 的对象 `{ current: initialValue }`，之后向外部返回该对象。
 
 **update 阶段**
 
@@ -279,7 +279,7 @@ const MyInput = forwardRef((props, ref) => {
 >
 > -   String 类型（已不推荐使用）
 > -   函数类型
-> -   { current : T }
+> -   `{ current : T }`
 >
 > 目前最为推荐的是在类组件中使用 createRef，函数组件中使用 useRef 来创建 Ref。
 >
