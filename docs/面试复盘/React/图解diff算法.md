@@ -39,7 +39,7 @@ diff 算法本身是有性能上面的消耗，在 React 文档中有提到，�
 接下来我们回头再来看限制一，对同级元素进行 diff，究竟是如何进行 diff ？整个 diff 的流程可以分为两大类：
 
 -   更新后只有一个元素，此时就会根据 newChild 创建对应的 wip FiberNode，对应的流程就是单节点 diff
--   更新后有多个元素，此时就会遍历 newChild 创建对应的 wip FiberNode 已经它的兄弟元素，此时对应的流程就是多节点 diff
+-   更新后有多个元素，此时就会遍历 newChild 创建对应的 wip FiberNode 以及它的兄弟元素，此时对应的流程就是多节点 diff
 
 ## 单节点 diff
 
