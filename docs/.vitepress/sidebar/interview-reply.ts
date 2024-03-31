@@ -41,6 +41,10 @@ export default [
                 link: '/面试复盘/React/前端框架的理解',
             },
             {
+                text: '对 React 的理解',
+                link: '/面试复盘/React/对React的理解',
+            },
+            {
                 text: 'React 和 Vue 描述页面的区别',
                 link: '/面试复盘/React/React 和 Vue 描述页面的区别',
             },

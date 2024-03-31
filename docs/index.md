@@ -12,7 +12,8 @@ hero:
   actions:
     - theme: brand
       text: 现在开始
-      link: /introduce/index
+      link: /面试复盘/汇总
+    #   link: /introduce/index
     - theme: alt
       text: GitHub
       link: https://github.com/joywins-y/blog-docs
