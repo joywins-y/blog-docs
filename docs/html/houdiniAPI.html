@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>houdini API demo</title>
+        <style>
+            .card::before {
+                z-index: -1;
+                filter: blur(20px); /* 模糊效果 */
+            }
+            .card::after {
+                content: '';
+                position: absolute;
+                inset: 8px;
+                background: #191c29;
+                border-radius: inherit;
+            }
+            @property --direc {
+                syntax: '<angle>'; /* 语法 */
+                initial-value: 0deg; /* 初始值 */
+                inherits: false; /* 是否继承 */
+            }
+            .card {
+                /* --direc: 0deg; */
+                color: red;
+                font-size: 2rem;
+                background-image: linear-gradient(
+                    /* 0deg, */ var(--direc),
+                    #5ddcff,
+                    #3c67e3 43%,
+                    #4e00c2
+                );
+                animation: rotate 3s linear infinite;
+            }
+            @keyframes rorate {
+                to {
+                    --direc: 360deg;
+                    /* background-image: linear-gradient(
+                        360deg,
+                        #5ddcff,
+                        #3c67e3 43%,
+                        #4e00c2
+                    ); */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card"></div>
+    </body>
+</html>
