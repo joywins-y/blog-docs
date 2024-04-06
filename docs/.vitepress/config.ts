@@ -75,6 +75,12 @@ export default defineConfig({
     // 增加一个自定义的 favicon
     ["link", { rel: "icon", href: "logo.png", crossorigin: "" }],
     ["link", { rel: "ico", href: "/favicon.ico", crossorigin: "" }],
+    // ["script", {
+    //     type: "text/javascript",
+    //     async: "true",
+    //     defer: "true",
+    //     src: "https://unpkg.com/pagedjs/dist/paged.polyfill.js"
+    // }]
   ],
   ignoreDeadLinks: true,
 });
