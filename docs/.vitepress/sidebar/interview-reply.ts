@@ -186,4 +186,76 @@ export default [
             },
         ],
     },
+    {
+        text: 'HTML',
+        items: [
+            {
+                text: 'HTML 面试题汇总',
+                link: '/面试复盘/HTML 面试题汇总',
+            },
+        ],
+    },
+    {
+        text: 'CSS',
+        items: [
+            {
+                text: 'CSS 面试题汇总',
+                link: '/面试复盘/CSS 面试题汇总',
+            },
+        ],
+    },
+    {
+        text: 'JavaScript',
+        items: [
+            {
+                text: 'JavaScript 面试题汇总',
+                link: '/面试复盘/JavaScript 面试题汇总',
+            },
+        ],
+    },
+    {
+        text: '网络',
+        items: [
+            {
+                text: 'HTML 面试题汇总',
+                link: '/面试复盘/网络面试题汇总',
+            },
+        ],
+    },
+    {
+        text: '工程化',
+        items: [
+            {
+                text: '工程化面试题汇总',
+                link: '/面试复盘/工程化面试题汇总',
+            },
+        ],
+    },
+    {
+        text: '浏览器',
+        items: [
+            {
+                text: '浏览器面试题汇总',
+                link: '/面试复盘/浏览器面试题汇总',
+            },
+        ],
+    },
+    {
+        text: 'Promise',
+        items: [
+            {
+                text: 'Promise 面试题汇总',
+                link: '/面试复盘/Promise面试题归总',
+            },
+        ],
+    },
+    {
+        text: 'Vue',
+        items: [
+            {
+                text: 'Vue 笔面试题汇总',
+                link: '/面试复盘/vue笔面试题汇总',
+            },
+        ],
+    },
 ];
