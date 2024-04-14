@@ -71,8 +71,8 @@
 >
 >```js
 ><div id="header">
->    <h1>标题</h1>
->    <h2>专注Web前端技术</h2>
+>   <h1>标题</h1>
+>   <h2>专注Web前端技术</h2>
 ></div>
 >```
 >
@@ -105,11 +105,11 @@
 >```js
 ><label> 标签的 for 属性应当与相关元素的 id 属性相同。
 ><form>
-> <label for="male">男</label>
-> <input type="radio" name="sex" id="male" />
+><label for="male">男</label>
+><input type="radio" name="sex" id="male" />
 >	<br />
-> <label for="female">女</label>
-> <input type="radio" name="sex" id="female" />
+><label for="female">女</label>
+><input type="radio" name="sex" id="female" />
 ></form>
 >```
 >
@@ -141,23 +141,23 @@
 >
 >1. **所有标签都必须小写**
 >
->   在 *XHTML* 中，所有的标签都必须小写，不能大小写穿插其中，也不能全部都是大写。
+>  在 *XHTML* 中，所有的标签都必须小写，不能大小写穿插其中，也不能全部都是大写。
 >
 >2. **标签必须成双成对**
 >
->   像是 \<p>...\</p>、\<a>...\</a>、\<div>...\</div>标签等，当出现一个标签时，必须要有对应的结束标签，缺一不可，就像在任何程序语言中的括号一样
+>  像是 \<p>...\</p>、\<a>...\</a>、\<div>...\</div>标签等，当出现一个标签时，必须要有对应的结束标签，缺一不可，就像在任何程序语言中的括号一样
 >
 >3. **标签顺序必须正确**
 >
->   标签由外到内，一层层包覆着，所以假设你先写 *div* 后写 *h1*，结尾就要先写 *h1* 后写 *div*。只要记住一个原则“先进后出”，先弹出的标签要后结尾。
+>  标签由外到内，一层层包覆着，所以假设你先写 *div* 后写 *h1*，结尾就要先写 *h1* 后写 *div*。只要记住一个原则“先进后出”，先弹出的标签要后结尾。
 >
 >4. **所有属性都必须使用双引号**
 >
->   在 *XHTML 1.0* 中规定连单引号也不能使用，所以全程都得用双引号。
+>  在 *XHTML 1.0* 中规定连单引号也不能使用，所以全程都得用双引号。
 >
 >5. 不允许使用 *target="_blank"*
 >
->   从 *XHTML 1.1* 开始全面禁止 *target* 属性，如果想要有开新窗口的功能，就必须改写为 *rel="external"*，并搭配 *JavaScript* 实现此效果。
+>  从 *XHTML 1.1* 开始全面禁止 *target* 属性，如果想要有开新窗口的功能，就必须改写为 *rel="external"*，并搭配 *JavaScript* 实现此效果。
 
 
 
@@ -220,7 +220,6 @@
 >参考答案：
 >
 >\<!DOCTYPE> 声明位于文档中的最前面的位置，处于 \<html> 标签之前，主要作用是告诉浏览器按照何种规范解析网页。
->
 
 >解析：
 >
@@ -389,9 +388,9 @@
 >
 >```css
 >#box{ 
->  float:left; 
->  width:10px; 
->  margin:10px;
+> float:left; 
+> width:10px; 
+> margin:10px;
 >}
 >```
 >
@@ -794,12 +793,12 @@
 >
 > ```html
 > <body>
->  <img src="url/to/your/image.jpg" alt="" usemap="#Map" />
->  　　<map name="Map" id="Map">
->      <area alt="" title="" href="#" shape="poly"
->          coords="65,71,98,58,114,90,108,112,79,130,56,116,38,100,41,76,52,53,83,34,110,33,139,46,141,75,145,101,127,115,113,133,85,132,82,131,159,117" />
->      <area alt="" title="" href="#" shape="poly" coords="28,22,57,20,36,39,27,61" />
->  </map>
+> <img src="url/to/your/image.jpg" alt="" usemap="#Map" />
+> 　　<map name="Map" id="Map">
+>   <area alt="" title="" href="#" shape="poly"
+>       coords="65,71,98,58,114,90,108,112,79,130,56,116,38,100,41,76,52,53,83,34,110,33,139,46,141,75,145,101,127,115,113,133,85,132,82,131,159,117" />
+>   <area alt="" title="" href="#" shape="poly" coords="28,22,57,20,36,39,27,61" />
+> </map>
 > </body>
 > ```
 

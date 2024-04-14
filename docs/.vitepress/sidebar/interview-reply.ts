@@ -191,7 +191,7 @@ export default [
         items: [
             {
                 text: 'HTML 面试题汇总',
-                link: '/面试复盘/HTML 面试题汇总',
+                link: '/面试复盘/HTML/HTML 面试题汇总',
             },
         ],
     },
@@ -200,7 +200,7 @@ export default [
         items: [
             {
                 text: 'CSS 面试题汇总',
-                link: '/面试复盘/CSS 面试题汇总',
+                link: '/面试复盘/CSS/CSS 面试题汇总',
             },
         ],
     },
@@ -209,7 +209,7 @@ export default [
         items: [
             {
                 text: 'JavaScript 面试题汇总',
-                link: '/面试复盘/JavaScript 面试题汇总',
+                link: '/面试复盘/JavaScript/JavaScript 面试题汇总',
             },
         ],
     },
@@ -218,7 +218,7 @@ export default [
         items: [
             {
                 text: 'HTML 面试题汇总',
-                link: '/面试复盘/网络面试题汇总',
+                link: '/面试复盘/网络/网络面试题汇总',
             },
         ],
     },
@@ -227,7 +227,7 @@ export default [
         items: [
             {
                 text: '工程化面试题汇总',
-                link: '/面试复盘/工程化面试题汇总',
+                link: '/面试复盘/工程化/工程化面试题汇总',
             },
         ],
     },
@@ -236,7 +236,7 @@ export default [
         items: [
             {
                 text: '浏览器面试题汇总',
-                link: '/面试复盘/浏览器面试题汇总',
+                link: '/面试复盘/浏览器/浏览器面试题汇总',
             },
         ],
     },
@@ -245,7 +245,7 @@ export default [
         items: [
             {
                 text: 'Promise 面试题汇总',
-                link: '/面试复盘/Promise面试题归总',
+                link: '/面试复盘/Promise/Promise面试题归总',
             },
         ],
     },
@@ -254,7 +254,7 @@ export default [
         items: [
             {
                 text: 'Vue 笔面试题汇总',
-                link: '/面试复盘/vue笔面试题汇总',
+                link: '/面试复盘/Vue/vue笔面试题汇总',
             },
         ],
     },
