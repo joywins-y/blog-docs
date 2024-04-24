@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* .triangle {
+                width: 0;
+                height: 0;
+                border: 50px solid transparent;
+                border-bottom: 100px solid lightblue;
+            } */
+            /* .triangle {
+                width: 160px;
+                height: 200px;
+                background-repeat: no-repeat;
+                background-image: linear-gradient(
+                        32deg,
+                        lightcoral 50%,
+                        rgba(255, 255, 255, 0) 50%
+                    ),
+                    linear-gradient(
+                        148deg,
+                        lightcoral 50%,
+                        rgba(255, 255, 255, 0) 50%
+                    );
+                background-size: 100% 50%;
+                background-position: top left, bottom left;
+            } */
+            .triangle {
+                width: 160px;
+                height: 200px;
+                background-color: lightcoral;
+                /* clip-path: polygon(0 0, 0% 100%, 100% 50%); */
+                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="triangle"></div>
+    </body>
+</html>

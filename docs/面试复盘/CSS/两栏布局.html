@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box {
+                overflow: hidden; /* 触发 BFC 清除浮动*/
+            }
+            .left {
+                float: left;
+                width: 200px;
+                background-color: lightblue;
+                height: 90vh;
+            }
+            .right {
+                margin: auto;
+                width: 100%;
+                background-color: lightcoral;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+        <span>Lorem ipsum dolor sit amet consectetur </span>
+        <p class="other">
+            <span>其他内容 Lorem ipsum dolor sit amet consectetur</span>
+        </p>
+    </body>
+</html>

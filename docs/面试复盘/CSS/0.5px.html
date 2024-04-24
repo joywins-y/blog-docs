@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .line {
+                height: 1px;
+                background-color: lightcoral;
+                transform: scaleY(0.5);
+                transform-origin: 0 0;
+                margin: 100px;
+            }
+            .line-1 {
+                background-position: left top;
+                background-image: -webkit-gradient(
+                    linear,
+                    left bottom,
+                    left top,
+                    color-stop(0.5, transparent),
+                    color-stop(0.5, red),
+                    to(red)
+                );
+            }
+            .hairline {
+                position: relative;
+            }
+            .hairline::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                transform: scaleY(0.5);
+                transform-origin: 0 0;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="line"></div>
+        <div class="line-1"></div>
+        <div class="hairline"></div>
+    </body>
+</html>

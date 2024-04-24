@@ -156,13 +156,13 @@ console.log(f.arr);
 ### 5. 描述下列代码的执行结果
 
 ```js
-01 function f(count) {
-02    console.log(`foo${count}`);
-03    setTimeout(() => { console.log(`bar${count}`); });
-04 }
-05 f(1);
-06 f(2);
-07 setTimeout(() => { f(3); });
+function f(count) {
+   console.log(`foo${count}`);
+   setTimeout(() => { console.log(`bar${count}`); });
+}
+f(1);
+f(2);
+setTimeout(() => { f(3); });
 ```
 
 > 参考答案：
@@ -3110,7 +3110,7 @@ console.log(child.hasOwnProperty('sayName'))//false
 >
 > 示例代码如下：
 >
-> ```js
+> ```html
 > <body>
 >   hello,world
 >   <input type="text" id="model">
@@ -5218,8 +5218,8 @@ console.log('script end');
 >
 > ```js
 > function findMaxDuplicateChar(str) {
->     let cnt = {},	//用来记录所有的字符的出现频次
->         c = '';		//用来记录最大频次的字符
+>     let cnt = {}; //用来记录所有的字符的出现频次
+>     let c = ''; //用来记录最大频次的字符
 >     for (let i = 0; i < str.length; i++) {
 >         let ci = str[i];
 >         if (!cnt[ci]) {
@@ -5934,9 +5934,9 @@ Promise.resolve().then(() => {
 >
 > - （初始任务）第一部分 Promise.resolve() 返回 「Promise { undefined }」。
 >
-> - （同任务，下同）继续调用 then，then 发现「Promise { undefined }」已解决，直接 enqueue 包含 console.log(0);return Promise.resolve(4) 的任务，之后返回新的「Promise { \<pending> }」（设为 promise0）。被 enqueue 的任务之后会引发 promise0 的 resolve/reject，详见 追加任务一 的 2. 3. 。
+> - （同任务，下同）继续调用 then，then 发现「Promise { undefined }」已解决，直接 enqueue 包含 console.log(0);return Promise.resolve(4) 的任务，之后返回新的「Promise { `<pending>` }」（设为 promise0）。被 enqueue 的任务之后会引发 promise0 的 resolve/reject，详见 追加任务一 的 2. 3. 。
 >
-> - 继续调用 promise0 上的 then，第二个 then 发现 promise0 还在 pending，因此不能直接 enqueue 新任务，而是将包含 console.log(res) 回调追加到 promise0 的 PromiseFulfillReactions 列表尾部，并返回新的「Promise { <pending> }」（设为 promiseRes）（该返回值在代码中被丢弃，但不影响整个过程）。
+> - 继续调用 promise0 上的 then，第二个 then 发现 promise0 还在 pending，因此不能直接 enqueue 新任务，而是将包含 console.log(res) 回调追加到 promise0 的 PromiseFulfillReactions 列表尾部，并返回新的「Promise { `<pending>` }」（设为 promiseRes）（该返回值在代码中被丢弃，但不影响整个过程）。
 >
 > - 第二部分 Promise.resolve().then... 同理，只有包含 console.log(1) 的任务被 enqueue。中间结果分别设为 promise1（=Promise.resolve().then(() => {console.log(1);})）, promise2, promise3, promise5, promise6。当前任务执行完毕。
 >
@@ -5964,7 +5964,7 @@ Promise.resolve().then(() => {
 >
 > - （追加任务三）调用 「Promise { 4 }」的 then。这个调用的参数（处理程序 onfulfill 和 onreject） 用的正是 promise0 的 resolve 和 reject。
 >
-> - 由于「Promise { 4 }」的 then 是标准的，行为和其他的 then 一致。（可参见初始任务的步骤 2. 。）它发现「Promise { 4 }」已解决，结果是 4。于是直接 enqueue 包含 promise0 的 resolve 的任务，参数是 4。理论上同样返回一个「Promise { <pending> }」，由于是在内部，不被外部观察，也不产生别的影响。）当前任务执行完毕。
+> - 由于「Promise { 4 }」的 then 是标准的，行为和其他的 then 一致。（可参见初始任务的步骤 2. 。）它发现「Promise { 4 }」已解决，结果是 4。于是直接 enqueue 包含 promise0 的 resolve 的任务，参数是 4。理论上同样返回一个「Promise { `<pending>` }」，由于是在内部，不被外部观察，也不产生别的影响。）当前任务执行完毕。
 >
 > 此时，任务列队上依旧有两个任务（一进一出）。「Job { console.log(2) }」和 「Job { promise0 的 resolve }」。执行「Job { console.log(2) }」。
 >
@@ -7384,7 +7384,7 @@ baz();
 
 > **分析：**
 >
-> *event.target* 指向的是事件目标，即触发事件的元素。因此点击 *\<button>* 触发事件的也就是  *\<button>*。
+> *event.target* 指向的是事件目标，即触发事件的元素。因此点击 *`<button>`* 触发事件的也就是  *`<button>`*。
 
 
 
@@ -7692,7 +7692,7 @@ setInterval(() => console.log("Hi"), 1000);
 
 > 参考答案：
 >
-> *JSONP（JSON with padding）*是一种借助 *\<script>* 元素实现跨域的技术，它不会使用 *XHR* 对象。之所以能实现跨域，主要是因为 *\<script>* 元素有以下两个特点：
+> *JSONP（JSON with padding）*是一种借助 *`<script>`* 元素实现跨域的技术，它不会使用 *XHR* 对象。之所以能实现跨域，主要是因为 *`<script>`* 元素有以下两个特点：
 >
 > 1）它的 *src* 属性能够访问任何 *URL* 资源，不会受同源策略的限制；
 >
@@ -7702,15 +7702,15 @@ setInterval(() => console.log("Hi"), 1000);
 >
 > 1）定义一个回调函数；
 >
-> 2）用 *DOM* 方法动态创建一个 *\<script>* 元素；
+> 2）用 *DOM* 方法动态创建一个 *`<script>`* 元素；
 >
-> 3）通过 *\<script>* 元素的 *src* 属性指定要请求的 *URL*，并且将回调函数的名称作为一个参数传递过去；
+> 3）通过 *`<script>`* 元素的 *src* 属性指定要请求的 *URL*，并且将回调函数的名称作为一个参数传递过去；
 >
-> 4）将 *\<script>* 元素插入到当前文档中，开始请求；
+> 4）将 *`<script>`* 元素插入到当前文档中，开始请求；
 >
 > 5）服务器接收到传递过来的参数，然后将回调函数和数据以调用的形式输出；
 >
-> 6）当 *\<script>* 元素接收到响应中的脚本代码后，就会自动的执行它们；
+> 6）当 *`<script>`* 元素接收到响应中的脚本代码后，就会自动的执行它们；
 
 
 
